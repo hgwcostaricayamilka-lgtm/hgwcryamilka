@@ -32,7 +32,7 @@ export const getPageTitle = (pathname: string): string => {
     return 'Pre-registro';
   }
   if (cleanPath === '/documentos' || cleanPath === '/documentos-pdf') {
-    return 'Documentos y Catálogos Oficiales';
+    return 'Documentos Oficiales';
   }
   if (cleanPath === '/contacto') {
     return 'Contacto y Oficinas';
