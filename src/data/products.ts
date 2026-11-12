@@ -69,15 +69,10 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Crema no láctea",
-      "Café instantáneo en polvo",
-      "Arándanos en polvo",
-      "Eritritol",
-      "Xilitol",
-      "Sal",
-      "Acesulfamo de potasio",
-      "Dióxido de silicio",
-      "Saborizante"
+      "Café arábica tostado instantáneo",
+      "Extracto puro de arándanos silvestres (Vaccinium corymbosum)",
+      "Xilitol de origen vegetal",
+      "Eritritol de fermentación natural"
     ],
     usage: "Vierta el contenido de 1 sachet en una taza, agregue aproximadamente 150 ml de agua caliente, mezcle homogéneamente, beba a una temperatura adecuada y disfrute de su sabor agradable.",
     precautions: "No consumir si es alérgico a alguno de los ingredientes.",
@@ -126,14 +121,8 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Crema no láctea (jarabe de glucosa, aceite vegetal hidrogenado, caseinato de sodio, fosfato de dipotasio, mono y diglicéridos de ácidos grasos, dióxido de silicio amorfo)",
-      "Café instantáneo en polvo",
-      "Micelio de Cordyceps (Cordyceps sinensis) en polvo",
-      "Dióxido de silicio amorfo (E 551)",
-      "Celulosa microcristalina (E 460(i))",
-      "Sal",
-      "Acesulfamo de potasio (E 950)",
-      "Saborizante alimenticio"
+      "Café soluble seleccionado de grano puro",
+      "Micelio de hongo Cordyceps (Cordyceps sinensis)"
     ],
     usage: "Vierta el contenido de 1 sachet del producto en una taza, agregue aproximadamente 150 ml de agua caliente, mezcle homogéneamente, beba a una temperatura adecuada y disfrute de su sabor agradable.",
     precautions: "No consumir si es alérgico a alguno de los ingredientes.",
@@ -183,11 +172,8 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Café instantáneo en polvo",
-      "Crema no láctea",
-      "Extracto de Ganoderma lucidum",
-      "Azúcar granulada blanca",
-      "Aromatizantes naturales"
+      "Café arábica soluble premium",
+      "Extracto concentrado de hongo Reishi (Ganoderma lucidum)"
     ],
     usage: "Vierta el contenido de 1 sachet del producto en una taza, agregue aproximadamente 150 ml de agua caliente, mezcle homogéneamente, beba a una temperatura adecuada y disfrute de su sabor agradable.",
     precautions: "No consumir si es alérgico a alguno de los ingredientes.",
@@ -249,17 +235,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Cebada en polvo",
-      "Bayas de Goji (fruto)",
-      "Gan Cao (raíz de regaliz)",
-      "Diente de león (flor y hojas)",
-      "Crisantemo (flor)",
-      "Dextrina resistente",
-      "Ácido cítrico (E330)",
-      "Citrato de sodio (E331)",
-      "Dióxido de silicio (E551)",
-      "Sucralosa (E955)",
-      "Celulosa microcristalina (E460i)"
+      "Cebada en polvo tostada",
+      "Bayas de Goji orgánicas (fruto)",
+      "Raíz de regaliz botánico (Gan Cao)",
+      "Flor y hojas de diente de león silvestre",
+      "Flor de crisantemo puro"
     ],
     usage: "Vierta el contenido de un sachet en 500 ml de agua, agite suavemente hasta disolver, beba y disfrute su refrescante sabor a hierba verde.",
     precautions: "No consumir si es alérgico a alguno de los ingredientes.",
@@ -307,9 +287,8 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Café soluble premium",
-      "Extracto concentrado de té negro (Camellia sinensis)",
-      "Edulcorantes de origen natural"
+      "Café arábica de grano seleccionado",
+      "Extracto puro concentrado de té negro (Camellia sinensis)"
     ],
     usage: "Vierta el contenido de 1 sachet del producto en una taza, agregue aproximadamente 150 ml de agua caliente, mezcle homogéneamente, beba a una temperatura adecuada y disfrute de su sabor agradable.",
     precautions: "Pacientes con cálculos, anemia o psicastenia no deben beber té negro. Las personas que toman medicamentos no se les permite beber té negro ya que puede interactuar con ciertos tratamientos.",
@@ -363,15 +342,9 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Crema no láctea",
-      "Azúcar blanca granulada",
-      "Arándanos en polvo (1.5%)",
-      "Suero de leche de Nueva Zelanda",
-      "Té negro (Camellia sinensis)",
-      "Leche desnatada en polvo",
-      "Maltodextrina",
-      "Dióxido de silicio (E 551)",
-      "Saborizante"
+      "Polvo de arándanos silvestres orgánicos (Vaccinium)",
+      "Extracto de hojas de té negro (Camellia sinensis)",
+      "Suero lácteo de pastoreo natural"
     ],
     usage: "Vierta el contenido de 1 sachet del producto en una taza, agregue aproximadamente 150 ml de agua caliente, mezcle homogéneamente y beba a una temperatura adecuada.",
     precautions: "No consumir si es alérgico a alguno de los ingredientes.",
@@ -419,11 +392,9 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Arándano",
-      "Azúcar blanca granulada",
-      "Jarabe de malta",
-      "Pectina",
-      "Ácido cítrico"
+      "Arándanos silvestres enteros seleccionados",
+      "Pectina natural de frutas cítricas",
+      "Jarabe de malta de cereales"
     ],
     usage: "Retire el precinto de seguridad del producto, destape y tome la porción según necesidad. Disfrute de su agradable sabor natural.",
     precautions: "No consumir si es alérgico a alguno de los ingredientes.",
@@ -480,12 +451,12 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Espino (Crataegus spp.)",
-      "Sang ye (Folium mori)",
-      "Té verde (Camellia sinensis)",
-      "Semen Cassiae",
-      "Ginseng (Panax ginseng)",
-      "Arroz (Oryza sativa)"
+      "Fruto de espino silvestre (Crataegus spp.)",
+      "Hojas de mora blanca botánica (Folium mori / Sang ye)",
+      "Hojas de té verde puro (Camellia sinensis)",
+      "Semillas de Cassia (Semen Cassiae)",
+      "Raíz de Ginseng asiático (Panax ginseng)",
+      "Grano de arroz integral (Oryza sativa)"
     ],
     usage: "Coloque una bolsita filtrante en una taza y agregue 250 ml de agua hirviendo, deje reposar por 5 minutos aproximadamente. Disfrute del aromático y suave sabor de la infusión.",
     precautions: "No consumir si es alérgico a alguno de los ingredientes.",
@@ -533,13 +504,9 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Polvo de arándanos (blueberry)",
-      "Azúcar blanco granulado",
-      "D-manitol (E421)",
-      "Maltodextrina",
-      "Ácido cítrico (E330)",
-      "HPMC (hidroxipropilmetilcelulosa) (E 464)",
-      "Saborizante"
+      "Polvo concentrado de arándanos silvestres (Vaccinium)",
+      "Manitol de origen vegetal",
+      "Ácido cítrico de extractos cítricos naturales"
     ],
     usage: "Retire el precinto y levante la tapa del frasco, tome la porción requerida (una o más unidades), y disfrute de su agradable sabor.",
     precautions: "No consumir si es alérgico a alguno de los ingredientes.",
@@ -587,10 +554,8 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Café seleccionado en polvo",
-      "Leche descremada en polvo",
-      "Proteína de suero",
-      "Excipientes alimenticios de sabor natural"
+      "Café concentrado de grano puro tostado",
+      "Proteína de suero lácteo natural"
     ],
     usage: "Retire el precinto y levante la tapa del frasco, tome la porción requerida (una o más unidades), y disfrute de su sabor a café auténtico.",
     precautions: "No consumir si es alérgico a los ingredientes.",
@@ -642,12 +607,9 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Cacao en polvo",
-      "Arándanos en polvo",
-      "Manteca de cacao (ácido oleico, ácido esteárico, ácido palmítico)",
-      "Leche descremada",
-      "Triptófano natural",
-      "Minerales (magnesio, hierro, zinc, cobre, potasio)"
+      "Cacao puro en polvo de origen vegetal",
+      "Polvo concentrado de arándanos silvestres",
+      "Manteca vegetal de cacao puro"
     ],
     usage: "Vierta el contenido de un sachet de 33 g en una taza, agregue 180 ml a 200 ml de agua o leche caliente, mezcle bien hasta disolver completamente y disfrute.",
     precautions: "No consumir si es alérgico a alguno de los componentes.",
@@ -694,11 +656,9 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Cacao en polvo",
-      "Leche descremada en polvo",
-      "Extracto de Ganoderma lucidum",
-      "Crema no láctea",
-      "Saborizantes permitidos"
+      "Cacao puro en polvo de origen vegetal",
+      "Extracto concentrado de hongo Ganoderma lucidum",
+      "Leche descremada natural"
     ],
     usage: "Preparar Choco Gano es tan fácil como disfrutarlo: Vacía el contenido de un sachet de 33 g en una taza. Añade aproximadamente 180 ml de agua o leche caliente. Mezcla bien hasta obtener una textura suave y homogénea.",
     precautions: "No consumir si es alérgico a alguno de los ingredientes.",
@@ -751,12 +711,10 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Péptido y tripéptido de colágeno",
-      "Jugo concentrado de frutas y verduras (cereza, arándanos, manzana, piña, papaya, kiwi, limón, naranja sanguina, acerola, acaí, uva)",
-      "Vitaminas (A, C, B1, B6, B12, D, E)",
-      "Minerales (calcio, magnesio, hierro, zinc)",
-      "Extracto de levadura",
-      "Fructooligosacáridos (FOS)"
+      "Jugo concentrado de 11 frutas y vegetales orgánicos (arándanos, cereza ácida, manzana, piña, papaya, kiwi, limón, naranja sanguina, acerola, acaí, uva)",
+      "Péptidos y tripéptidos de colágeno marino natural",
+      "Fructooligosacáridos (FOS) prebióticos de origen vegetal",
+      "Extracto de levadura natural"
     ],
     usage: "Consumir 1 sobre diario directamente o diluido en agua fría o zumos. Tomar de preferencia en la mañana o antes de dormir.",
     precautions: "No consumir si es alérgico a los componentes del producto.",
@@ -806,16 +764,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Palmitato de sodio",
-      "Cocoato de sodio",
-      "Agua",
-      "Glicerina",
-      "Fragancia",
-      "Cloruro de sodio",
-      "Miel",
-      "Acetato de tocoferilo (Vitamina E)",
-      "Aceite de oliva (Olea europaea)",
-      "Extracto de turmalina"
+      "Aceite de oliva virgen extra (Olea europaea)",
+      "Aceite de coco puro vegetal",
+      "Miel pura de abejas",
+      "Vitamina E vegetal (tocoferol)",
+      "Extracto mineral de nanoturmalina natural"
     ],
     usage: "Humedecer la piel del rostro, manos o cuerpo, seguidamente enjabonar suavemente y luego enjuagar con abundante agua.",
     precautions: "Sólo para uso externo. Evite el contacto directo con los ojos, mucosas, oídos internos y áreas sensibles. Mantener fuera del alcance de los niños.",
@@ -869,15 +822,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Palmitato de sodio",
-      "Aceite de coco",
-      "Agua",
-      "Glicerina",
-      "Fragancia",
-      "Cloruro de sodio",
-      "Miel",
-      "Acetato de tocoferilo (Vitamina E)",
-      "Aceite de oliva (Olea europaea insaponificables)"
+      "Aceite de oliva virgen extra (Olea europaea)",
+      "Aceite de coco puro vegetal",
+      "Miel pura de abejas",
+      "Vitamina E vegetal (tocoferol)",
+      "Glicerina vegetal"
     ],
     usage: "Humedecer la piel del rostro, manos o cuerpo, enjabonar suavemente y luego aclarar con abundante agua.",
     precautions: "Sólo para uso externo. Evite el contacto directo con los ojos, mucosas, oídos internos y áreas sensibles. Mantener fuera del alcance de los niños.",
@@ -927,13 +876,10 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Palmitato de sodio",
-      "Cocoato de sodio",
-      "Carbonato de calcio",
-      "Aceite de hoja de artemisia",
-      "Extracto de hoja de artemisia (Artemisia argyi)",
-      "Agua",
-      "Glicerina"
+      "Aceite esencial puro de artemisia (Artemisia argyi)",
+      "Extracto botánico de hoja de artemisia",
+      "Aceite de coco vegetal",
+      "Glicerina vegetal pura"
     ],
     usage: "Humedecer la piel del rostro, manos o cuerpo, enjabonar suavemente y luego aclarar con abundante agua.",
     precautions: "Sólo para uso externo. Evite el contacto directo con los ojos, mucosas, oídos internos y áreas sensibles. Mantener fuera del alcance de los niños.",
@@ -989,13 +935,12 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Péptidos de soja",
-      "Xilitol",
-      "Extracto de menta",
-      "Extracto de raíz de regaliz",
-      "Extracto de diente de león",
-      "Turmalina micronizada",
-      "Base dental sin flúor ni triclosán"
+      "Péptidos bioactivos de soya orgánica",
+      "Extracto botánico de menta piperita",
+      "Extracto de raíz de regaliz (Glycyrrhiza glabra)",
+      "Extracto de flor de diente de león",
+      "Turmalina micronizada de origen mineral natural",
+      "Xilitol de origen vegetal"
     ],
     usage: "Cepille sus dientes diariamente con TOURMALINE TOOTHPASTE después de cada comida, al menos tres veces al día o como recomiende su odontólogo. Aplique el producto en su cepillo de dientes, realice una limpieza profunda y enjuague con abundante agua.",
     precautions: "No ingerir. Mantener fuera del alcance de niños pequeños.",
@@ -1046,12 +991,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Turmalina en polvo",
-      "Extracto de madreselva",
+      "Turmalina negra de origen mineral natural",
+      "Extracto botánico de flor de madreselva (Lonicera japonica)",
       "Extracto de raíz de Bletilla striata",
-      "Xilitol",
-      "Extracto de menta",
-      "Base limpiadora libre de flúor"
+      "Extracto natural de menta silvestre",
+      "Xilitol de origen vegetal"
     ],
     usage: "Cepille sus dientes diariamente con TOURMALINE TOOTHPASTE después de cada comida, al menos tres veces al día o como recomiende su odontólogo. Aplique el producto en su cepillo de dientes, realice una limpieza profunda y enjuague con abundante agua.",
     precautions: "No ingerir. Mantener en lugar fresco.",
@@ -1100,11 +1044,10 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Extracto de madreselva",
-      "Extracto de raíz de Isatis tinctoria",
-      "Extracto de menta",
-      "Xilitol",
-      "Pasta base herbal sin pigmentos sintéticos"
+      "Extracto botánico de flor de madreselva",
+      "Extracto botánico de raíz de Isatis tinctoria",
+      "Aceite esencial de menta verde",
+      "Xilitol de corteza de abedul vegetal"
     ],
     usage: "Cepille sus dientes diariamente con HERBS después de cada comida, al menos tres veces al día o como recomiende su odontólogo. Aplique el producto en su cepillo de dientes, realice una limpieza profunda y enjuague con abundante agua.",
     precautions: "No ingerir. Seguro para uso familiar.",
@@ -1152,11 +1095,10 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Lisados probióticos orales",
-      "Turmalina purificada",
-      "Xilitol",
-      "Agentes limpiadores suaves",
-      "Extracto de menta aromática"
+      "Fermentos probióticos de origen natural (lisados de Lactobacillus)",
+      "Turmalina purificada de origen mineral natural",
+      "Extracto botánico de menta aromática",
+      "Xilitol vegetal"
     ],
     usage: "Colocar una pequeña cantidad de pasta sobre el cepillo de dientes. Cepillar los dientes durante 2 a 3 minutos, asegurando cubrir todas las superficies. Enjuagar con abundante agua.",
     precautions: "No ingerir. Mantener en lugar fresco y seco.",
@@ -1206,11 +1148,10 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Celulosa de primera calidad",
-      "Tela no tejida hipoalergénica",
-      "Extracto de turmalina (banda aniónica)",
-      "Polipropileno transpirable",
-      "Adhesivo siliconado de grado higiénico"
+      "Fibras de algodón puro 100% natural",
+      "Celulosa vegetal biodegradable",
+      "Banda aniónica de turmalina mineral bioactiva",
+      "Extracto botánico de menta fresca"
     ],
     usage: "Tome 1 unidad del empaque, retire el envoltorio y las cintas siliconadas del producto, enseguida fije la parte adhesiva de la toalla sanitaria a la prenda íntima y siéntase delicadamente cómoda y protegida.",
     precautions: "Sólo para uso externo. No use el producto si el empaque inicialmente se encuentra abierto, no deseche el producto directamente en el inodoro.",
@@ -1260,11 +1201,10 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Celulosa",
-      "Tela no tejida",
-      "Extracto de turmalina (banda aniónica)",
-      "Polipropileno transpirable",
-      "Cintas siliconadas y adhesivo seguro"
+      "Fibras de algodón suave 100% natural",
+      "Celulosa vegetal absorbente de alta pureza",
+      "Banda aniónica de turmalina mineral bioactiva",
+      "Extracto vegetal de menta herbal"
     ],
     usage: "Tome 1 unidad del empaque, retire el envoltorio y las cintas siliconadas del producto, enseguida fije la parte adhesiva de la toalla sanitaria a la prenda íntima y siéntase delicadamente cómoda y protegida.",
     precautions: "Sólo para uso externo. No use el producto si el empaque inicialmente se encuentra abierto, no deseche el producto directamente en el inodoro.",
@@ -1314,10 +1254,9 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Celulosa",
-      "Tela no tejida",
-      "Extracto de turmalina",
-      "Polipropileno transpirable"
+      "Fibras de algodón 100% natural transpirable",
+      "Celulosa vegetal absorbente multicapa",
+      "Banda aniónica de turmalina mineral bioactiva"
     ],
     usage: "Tome 1 unidad del empaque, retire el envoltorio y las cintas siliconadas, enseguida fije la parte adhesiva a la prenda íntima antes de acostarse para sentirse delicadamente cómoda y protegida.",
     precautions: "Sólo para uso externo. No deseche el producto directamente en el inodoro.",
@@ -1367,11 +1306,8 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Tela de Nylon elástico",
-      "Neopreno",
-      "Tourmalina bioactiva",
-      "Piedras Magnéticas",
-      "Sistema de sujeción velcro (scrash)"
+      "Piedras de turmalina bioactiva natural pulverizada",
+      "Imanes de magnetita mineral natural"
     ],
     usage: "Coloque la banda directamente alrededor del cuello y ajuste firmemente al tamaño requerido. Úselo de 3 ó 4 veces al día, al menos 30 minutos cada vez.",
     precautions: "Limpiar con un paño húmedo suave. No sumergir en agua hirviendo.",
@@ -1423,11 +1359,8 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Tela de Nylon elástico",
-      "Neopreno térmico",
-      "Tourmalina",
-      "Piedras Magnéticas",
-      "Sistema de sujeción velcro (scrash)"
+      "Piedras de turmalina bioactiva natural pulverizada",
+      "Imanes de magnetita mineral natural"
     ],
     usage: "Coloque el cinturón directamente alrededor de la cintura y ajuste firmemente al tamaño requerido. Úselo de 3 o 4 veces al día, al menos 30 minutos cada vez.",
     precautions: "Limpiar suavemente con paño húmedo. No lavar en lavadora automática.",
@@ -1478,11 +1411,8 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Tela de Nylon elástico",
-      "Neopreno",
-      "Tourmalina",
-      "Piedras Magnéticas",
-      "Sistema de sujeción velcro (scrash)"
+      "Piedras de turmalina bioactiva natural pulverizada",
+      "Imanes de magnetita mineral natural"
     ],
     usage: "Coloque la banda directamente alrededor de la rodilla y ajuste firmemente al tamaño requerido. Úselo de 3 ó 4 veces al día, al menos 30 minutos cada vez.",
     precautions: "Limpiar manualmente con paño húmedo. Secar al aire libre.",
@@ -1531,10 +1461,9 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Núcleo ergonómico de alta resiliencia",
-      "Inserto de nanoturmalina bioactiva",
-      "Piedras magnéticas terapéuticas",
-      "Funda transpirable de alta densidad"
+      "Inserto de nanoturmalina mineral bioactiva natural",
+      "Piedras de magnetita terapéutica natural",
+      "Algodón vegetal transpirable"
     ],
     usage: "Coloque la almohada sobre la superficie de descanso, asegurándose de que quede firme y bien posicionada en la cabecera de la cama. Instrucciones de Lavado y Cuidado: Lave el producto de forma estricta: 1. Lavar a mano con agua a temperatura Max.40°C con jabón o detergente neutro. No usar lejía ni blanqueadores. 2. Secar bajo sombra, en lugar ventilado. No exprimir ni usar secadora. 3. No planchar. 4. Guardar en bolsa original en lugar seco.",
     precautions: "No lavar en seco, no blanquear, no planchar, secar extendido. Condiciones de almacenamiento: Almacenar a temperatura ambiente, ventilado, colocar extendido, no colocar objetos pesados sobre la almohada, no almacenar con artículos que destiñan.",
@@ -1579,9 +1508,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Piedras de turmalina natural seleccionadas",
-      "Hilo de unión de alta resistencia",
-      "Cierre seguro hipoalergénico"
+      "Gemas de turmalina negra 100% mineral natural seleccionada"
     ],
     usage: "Usar como collar alrededor del cuello. Sugerencia de Limpieza: 1) Prepare una solución salina vertiendo 1 cuchara de sal de maras o marina en 500 ml de agua. 2) La solución salina deberá indicar un pH entre 7 – 7.5. 3) Coloque el collar de turmalina en la solución salina por un tiempo de 4 horas aproximadamente. 4) Retírelo y séquelo con un paño desechable limpio.",
     precautions: "Evitar contacto con químicos corrosivos o perfume directo.",
@@ -1625,8 +1552,7 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Cuentas esféricas de turmalina natural",
-      "Banda elástica de alta durabilidad"
+      "Cuentas esféricas de turmalina negra 100% mineral natural"
     ],
     usage: "Usar en la muñeca como pulsera. Sugerencia de Limpieza: 1) Prepare una solución salina vertiendo 1 cuchara de sal de maras o marina en 500 ml de agua (pH 7-7.5). 2) Coloque la pulsera en la solución salina por 4 horas aproximadamente. 3) Retírela y séquela con un paño limpio.",
     precautions: "Evitar tirones bruscos.",
@@ -1669,9 +1595,9 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Tela de alta calidad",
-      "Fibra de carbón de bambú",
-      "Piedra de turmalina pulverizada autocalentable"
+      "Fibra vegetal de carbón de bambú",
+      "Piedras de turmalina mineral natural pulverizada",
+      "Algodón vegetal transpirable"
     ],
     usage: "Colocar las plantillas dentro del calzado diario. Ajustar o recortar al tamaño de la suela si fuera necesario. Úselas a lo largo del día para mantener los pies cálidos y energizados.",
     precautions: "Limpiar la superficie con paño ligeramente húmedo. No sumergir en agua hirviendo ni usar lejía.",
@@ -1715,10 +1641,8 @@ export const PRODUCTS: Product[] = [
       }
     ],
     ingredients: [
-      "Acero inoxidable 304 de grado alimenticio",
-      "Tapa hermética de polipropileno libre de BPA",
-      "Anillo de sellado de silicona higiénica",
-      "Correa de tela resistente con insignia HGW"
+      "Acero inoxidable natural grado quirúrgico (304)",
+      "Aislamiento térmico ecológico al vacío"
     ],
     usage: "Lavar antes del primer uso. Verter la bebida preparada en el termo y enroscar firmemente la tapa. Abrir el visor de la boquilla para beber cómodamente.",
     precautions: "Lavar a mano con esponja suave para cuidar la pintura exterior. No usar en microondas ni colocar sobre fuego directo.",

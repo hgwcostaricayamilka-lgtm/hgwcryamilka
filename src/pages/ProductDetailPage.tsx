@@ -279,7 +279,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                 activeTab === 'ingredients' ? 'text-black border-b-2 border-[#00795F]' : 'text-stone-400 hover:text-black'
               }`}
             >
-              Ingredientes y Composición
+              Ingredientes Naturales y Vegetales
             </button>
             <button
               onClick={() => setActiveTab('usage')}
@@ -353,21 +353,30 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
               </div>
             )}
 
-            {/* TAB 2: Ingredientes y Composición */}
+            {/* TAB 2: Ingredientes de Origen Natural, Orgánico y Vegetal */}
             {activeTab === 'ingredients' && (
               <div className="space-y-8 animate-fade-in">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-black text-stone-900 mb-4">
-                    Composición e Ingredientes
-                  </h3>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                    <h3 className="text-xl sm:text-2xl font-black text-stone-900">
+                      Ingredientes de Origen Natural, Orgánico y Vegetal
+                    </h3>
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-[#00795F] rounded-xl text-xs font-black border border-emerald-200 shrink-0">
+                      <Sparkles className="w-3.5 h-3.5 text-[#00A550]" />
+                      <span>Fórmula Botánica y Mineral Pura</span>
+                    </div>
+                  </div>
+                  <p className="text-stone-600 text-sm mb-5">
+                    Selección exclusiva de principios activos botánicos, extractos herbales, frutos silvestres y minerales naturales de alta pureza:
+                  </p>
                   <div className="flex flex-wrap gap-2.5">
                     {product.ingredients?.map((ing, i) => (
                       <div key={i} className="px-4 py-2.5 bg-emerald-50 text-[#00795F] font-bold text-sm rounded-xl border border-emerald-100 flex items-center gap-2 shadow-2xs">
-                        <Sparkles className="w-3.5 h-3.5 text-[#00A550]" />
-                        {ing}
+                        <Sparkles className="w-3.5 h-3.5 text-[#00A550] shrink-0" />
+                        <span>{ing}</span>
                       </div>
                     )) || (
-                      <p className="text-stone-500 italic">Consulte el desglose químico en la ficha técnica oficial.</p>
+                      <p className="text-stone-500 italic">Consulte el desglose botánico en la ficha técnica oficial.</p>
                     )}
                   </div>
                 </div>
