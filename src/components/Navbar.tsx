@@ -44,7 +44,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           {/* Zone 1: Official Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0 group">
             <img
-              src="https://media.academiahgw.online/wp-content/uploads/2026/11/LOGO-HGW-PANAMA-DISTRIBUIDOR-INDEPENDIENTE.png"
+              src="https://media.academiahgw.online/wp-content/uploads/2026/11/hgw_logo.png"
               alt="HGW Costa Rica - Distribuidor Independiente"
               className="h-12 sm:h-14 w-auto object-contain group-hover:scale-102 transition-transform"
               referrerPolicy="no-referrer"

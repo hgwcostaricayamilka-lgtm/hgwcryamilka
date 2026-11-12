@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-5 space-y-3">
             <Link to="/inicio" className="flex items-center gap-3">
               <img
-                src="https://media.academiahgw.online/wp-content/uploads/2026/11/LOGO-HGW-Costa Rica-DISTRIBUIDOR-INDEPENDIENTE.png"
+                src="https://media.academiahgw.online/wp-content/uploads/2026/11/hgw_logo.png"
                 alt="HGW Costa Rica - Distribuidor Independiente"
                 className="h-12 w-auto object-contain brightness-0 invert"
                 referrerPolicy="no-referrer"

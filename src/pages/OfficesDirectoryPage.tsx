@@ -322,7 +322,7 @@ export const OfficesDirectoryPage: React.FC = () => {
           
           <div className="flex flex-col items-center text-center">
             <img 
-              src="https://media.academiahgw.online/wp-content/uploads/2026/11/LOGO-HGW-PANAMA-DISTRIBUIDOR-INDEPENDIENTE.png" 
+              src="https://media.academiahgw.online/wp-content/uploads/2026/11/hgw_logo.png" 
               alt="HGW Logo" 
               className="h-16 sm:h-20 w-auto mb-8 object-contain"
             />
