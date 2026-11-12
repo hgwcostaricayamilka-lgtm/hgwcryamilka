@@ -43,7 +43,7 @@ export const NotFoundPage: React.FC = () => {
 
         <div className="pt-8 flex items-center justify-center gap-2 text-stone-400 font-bold text-xs uppercase tracking-widest">
           <ShieldCheck className="w-4 h-4" />
-          <span>HGW Panamá · Distribuidor Oficial</span>
+          <span>HGW Costa Rica · Distribuidor Oficial</span>
         </div>
       </div>
     </div>

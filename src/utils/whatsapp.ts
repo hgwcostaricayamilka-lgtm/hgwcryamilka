@@ -1,5 +1,5 @@
 export const DISTRIBUTOR_WHATSAPP_NUMBER = "50767788375";
-export const CORPORATE_OFFICE_PHONE = "+507 392-8415";
+export const CORPORATE_OFFICE_PHONE = "+506 7185-5885";
 
 /**
  * Generates the WhatsApp URL with the exact message requested by the user:

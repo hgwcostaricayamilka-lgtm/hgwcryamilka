@@ -10,7 +10,7 @@ export const ContactSection: React.FC = () => {
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
-    const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwCosta Rica.com';
+    const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwcostarica.com';
     let text = '';
     
     if (topic === 'Afiliación y Membresías') {
@@ -110,7 +110,7 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <h3 className="text-xs font-bold text-stone-500 uppercase tracking-wider">Correo Electrónico</h3>
                   <p className="text-base font-bold text-black select-all">
-                    hgwCosta Rica507g@gmail.com
+                    hgwcostarica@gmail.com
                   </p>
                   <p className="text-xs sm:text-sm text-stone-600 mt-0.5">Buzón directo para pre-registros y atención oficial</p>
                 </div>

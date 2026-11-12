@@ -14,15 +14,14 @@ interface Office {
 }
 
 const OFFICES: Office[] = [
-  // --- PANAMÁ ---
+  // --- COSTA RICA ---
   {
-    country: "Panamá",
-    city: "Ciudad de Panamá",
-    name: "Sede Principal Panamá",
-    address: "Avenida Porras, Plaza Royal Blue, Local No. 6, Corregimiento de San Francisco, Provincia de Panamá.",
-    phone: "+507 392-8415",
-    whatsapp: "+507 392-8415",
-    hours: "Lun - Vie: 09:00 am a 06:00 pm | Sáb: 09:00 am a 01:00 pm | Dom: Cerrado",
+    country: "Costa Rica",
+    city: "San José",
+    name: "Sede Principal Costa Rica",
+    address: "San José El Carmen, Avenida 5 Calle 1.",
+    phone: "+506 7185 5885",
+    hours: "Lun - Vie: 09:00 am a 17:30 pm | Sáb: 10:00 am a 14:00 pm | Dom: Cerrado",
     isMain: true
   },
   // --- PERÚ ---
@@ -292,16 +291,6 @@ const OFFICES: Office[] = [
     address: "Calle Padres Aguilar #2, Local No. 3 entre 85 y 87 Av. Sur, Colonia Escalón.",
     phone: "+503 2556 8699",
     hours: "Lun - Vie: 09:00 am a 17:30 pm | Sáb: 09:00 am a 13:00 pm | Dom: Cerrado",
-    isMain: true
-  },
-  // --- COSTA RICA ---
-  {
-    country: "Costa Rica",
-    city: "San José",
-    name: "Sede Principal Costa Rica",
-    address: "San José El Carmen, Avenida 5 Calle 1.",
-    phone: "+506 7185 5885",
-    hours: "Lun - Vie: 09:00 am a 17:30 pm | Sáb: 10:00 am a 14:00 pm | Dom: Cerrado",
     isMain: true
   }
 ];

@@ -91,12 +91,12 @@ export const Footer: React.FC = () => {
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#00A550] shrink-0 mt-0.5" />
                 <span>
-                  Avenida Porras, Plaza Royal Blue, Local No. 6, San Francisco, Ciudad de Costa Rica.
+                  San José El Carmen, Avenida 5 Calle 1, San José, Costa Rica.
                 </span>
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#00A550] shrink-0" />
-                <span>Oficina Principal: <strong className="text-white font-bold">+507 392-8415</strong> (Atención Corporativa)</span>
+                <span>Oficina Principal: <strong className="text-white font-bold">+506 7185-5885</strong> (Atención Corporativa)</span>
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -104,14 +104,14 @@ export const Footer: React.FC = () => {
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#00A550] shrink-0" />
-                <span>Email: <strong className="text-white font-bold select-all">hgwCosta Rica507g@gmail.com</strong></span>
+                <span>Email: <strong className="text-white font-bold select-all">hgwcostarica@gmail.com</strong></span>
               </p>
               <div className="p-2.5 bg-stone-800 rounded-xl border border-stone-700/80 text-[11px] text-stone-300 leading-snug">
                 <strong className="text-emerald-400 font-bold block mb-0.5">Soporte a Socios Registrados:</strong>
-                Si ya es socio activo de HGW, debe comunicarse directamente con su <em>patrocinador</em> o con el teléfono corporativo <strong>+507 392-8415</strong>. El WhatsApp de este sitio corresponde a distribuidores independientes.
+                Si ya es socio activo de HGW, debe comunicarse directamente con su <em>patrocinador</em> o con el teléfono corporativo <strong>+506 7185-5885</strong>. El WhatsApp de este sitio corresponde a distribuidores independientes.
               </div>
               <p className="pt-1 text-xs text-stone-400 leading-relaxed">
-                Horario: Lun - Vie 9:00 am a 6:00 pm | Sáb 9:00 am a 1:00 pm. Envíos por Servientrega a todo Costa Rica.
+                Horario: Lun - Vie 9:00 am a 5:30 pm | Sáb 10:00 am a 2:00 pm. Envíos por Correos de Costa Rica a todo el país.
               </p>
               <div className="pt-2">
                 <a

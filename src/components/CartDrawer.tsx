@@ -35,7 +35,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   const handleSendWhatsApp = () => {
     if (items.length === 0) return;
 
-    const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwCosta Rica.com';
+    const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwcostarica.com';
     let message = `¡Hola! Estaba visitando tu tienda online (${currentUrl}) y deseo coordinar la compra y entrega del siguiente pedido:\n\n`;
     
     items.forEach((item) => {

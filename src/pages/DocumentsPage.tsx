@@ -46,7 +46,7 @@ export const DocumentsPage: React.FC = () => {
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 backdrop-blur-xs rounded-full text-xs font-black uppercase tracking-wider text-emerald-200 mb-4">
               <FileText className="w-3.5 h-3.5" />
-              <span>Biblioteca Técnica HGW Panamá</span>
+              <span>Biblioteca Técnica HGW Costa Rica</span>
             </span>
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight mb-4">
               Documentos, Fichas Técnicas y Manuales en PDF

@@ -121,7 +121,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 px-3.5 py-2 text-xs font-bold text-white bg-[#00A550] hover:bg-[#008f44] rounded-xl shadow-xs transition-all whitespace-nowrap active:scale-95"
             >
-              <Phone className="w-3.5 h-3.5" />
               <span>+507 6778-8375</span>
             </a>
 
@@ -189,7 +188,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-bold text-white bg-[#00A550] hover:bg-[#008f44] rounded-xl transition-colors"
               >
-                <Phone className="w-4 h-4" />
                 <span>WhatsApp Distribuidor (+507 6778-8375)</span>
               </a>
             </div>

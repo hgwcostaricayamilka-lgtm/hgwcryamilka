@@ -16,10 +16,10 @@ export const Memberships: React.FC = () => {
             <span>Planes Oficiales de Activación</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-black tracking-tight">
-            Membresías HGW Panamá
+            Membresías HGW Costa Rica
           </h2>
           <p className="text-[18px] text-stone-800 mt-3 leading-relaxed font-normal">
-            Elige tu plan de activación para consumir con descuento preferencial o emprender como Distribuidor Independiente autorizado. En todos los planes recibes <strong>productos de tu preferencia</strong> y respaldo local en Panamá.
+            Elige tu plan de activación para consumir con descuento preferencial o emprender como Distribuidor Independiente autorizado. En todos los planes recibes <strong>productos de tu preferencia</strong> y respaldo local en Costa Rica.
           </p>
 
           {/* Clarification banner: Diamante is a rank, not a membership */}
@@ -31,7 +31,7 @@ export const Memberships: React.FC = () => {
           <div className="mt-3 p-3 bg-amber-50 border border-amber-300 rounded-2xl text-xs text-stone-800 font-medium max-w-2xl mx-auto flex items-center justify-center gap-2 text-center shadow-2xs">
             <ShieldAlert className="w-4 h-4 text-amber-700 shrink-0" />
             <span>
-              <strong>¿Ya eres socio registrado de HGW?</strong> Debes comunicarte directamente con tu patrocinador o llamar a oficinas principales: <strong className="text-black">+507 392-8415</strong>.
+              <strong>¿Ya eres socio registrado de HGW?</strong> Debes comunicarte directamente con tu patrocinador o llamar a oficinas principales: <strong className="text-black">+506 7185-5885</strong>.
             </span>
           </div>
         </div>
@@ -39,9 +39,9 @@ export const Memberships: React.FC = () => {
         {/* 4 Cards Grid - No rank logos, pure clean typography */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {MEMBERSHIP_PLANS.map((plan) => {
-            const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwpanama.com/membresias';
+            const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwcostarica.com/membresias';
             const planWhatsappText = encodeURIComponent(
-              `¡Hola! Estaba visitando tu tienda online (${currentUrl}) y quería preguntar sobre cómo afiliarse a HGW Panamá con el plan "${plan.name}" (${plan.bv}). Mi nombre es:`
+              `¡Hola! Estaba visitando tu tienda online (${currentUrl}) y quería preguntar sobre cómo afiliarse a HGW Costa Rica con el plan "${plan.name}" (${plan.bv}). Mi nombre es:`
             );
             const planWhatsappUrl = `https://wa.me/50767788375?text=${planWhatsappText}`;
 
@@ -182,7 +182,7 @@ export const Memberships: React.FC = () => {
                 ¿Sabías que con el Plan Master ganas hasta un 52% en tus compras personales?
               </h3>
               <p className="text-[17px] sm:text-[18px] text-emerald-100 leading-relaxed max-w-2xl font-normal">
-                Al comprar como miembro Master (600 BV), obtienes los precios más bajos de distribuidor con hasta un 52% de beneficio, permitiéndote márgenes del 60% en ventas directas al por menor en Panamá.
+                Al comprar como miembro Master (600 BV), obtienes los precios más bajos de distribuidor con hasta un 52% de beneficio, permitiéndote márgenes del 60% en ventas directas al por menor en Costa Rica.
               </p>
             </div>
 
@@ -220,7 +220,7 @@ export const Memberships: React.FC = () => {
             <div className="space-y-1 max-w-2xl">
               <div className="flex items-center gap-2 text-xs font-bold text-[#00795F] uppercase">
                 <ShieldCheck className="w-4 h-4 text-[#00A550]" />
-                <span>Patrocinio Oficial Panamá: Yamilka507</span>
+                <span>Patrocinio Oficial Costa Rica: Yamilka507</span>
               </div>
               <h4 className="text-lg sm:text-xl font-extrabold text-black">
                 ¿Deseas registrarte directamente en el portal oficial HGW?

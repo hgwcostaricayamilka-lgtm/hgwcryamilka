@@ -13,11 +13,11 @@ export const PreRegistrationPage: React.FC = () => {
   const [birthDate, setBirthDate] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [province, setProvince] = useState('Panamá');
+  const [province, setProvince] = useState('San José');
   const [district, setDistrict] = useState('');
   const [address, setAddress] = useState('');
-  const [deliveryMethod, setDeliveryMethod] = useState('Servientrega (Envío a Domicilio)');
-  const [paymentMethod, setPaymentMethod] = useState('Yappy (Banco General)');
+  const [deliveryMethod, setDeliveryMethod] = useState('Correos de Costa Rica (Envío a Domicilio)');
+  const [paymentMethod, setPaymentMethod] = useState('SINPE Móvil');
   const [notes, setNotes] = useState('');
   const [honeypot, setHoneypot] = useState(''); // Anti-spam trap
 
@@ -43,14 +43,14 @@ export const PreRegistrationPage: React.FC = () => {
     setIsSubmitting(true);
     setErrorMsg('');
 
-    // Secure SMTP dispatch simulation to hgwpanama507g@gmail.com
+    // Secure SMTP dispatch simulation to hgwcostarica@gmail.com
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
 
       const planObj = MEMBERSHIP_PLANS.find(p => p.id === selectedPlan) || MEMBERSHIP_PLANS[3];
-      let message = `*SOLICITUD DE PRE-REGISTRO HGW PANAMÁ*\n`;
-      message += `_(Copia segura enviada a hgwpanama507g@gmail.com)_\n\n`;
+      let message = `*SOLICITUD DE PRE-REGISTRO HGW COSTA RICA*\n`;
+      message += `_(Copia segura enviada a hgwcostarica@gmail.com)_\n\n`;
       message += `📋 *Tipo de Cuenta:* ${accountType === 'cliente' ? 'Cliente Preferencial' : `Distribuidor (${planObj.name} - ${planObj.bv})`}\n`;
       message += `👤 *Nombre Completo:* ${fullName.trim()}\n`;
       message += `🪪 *Cédula / Pasaporte:* ${nationalId.trim()}\n`;
@@ -88,7 +88,7 @@ export const PreRegistrationPage: React.FC = () => {
         <div className="bg-white rounded-3xl p-6 sm:p-10 border border-stone-200 shadow-sm mb-8 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 text-[#00795F] text-xs font-black uppercase tracking-wider mb-3">
             <ShieldCheck className="w-4 h-4 text-[#00A550]" />
-            <span>Afiliación y Registro Oficial · Panamá</span>
+            <span>Afiliación y Registro Oficial · Costa Rica</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-extrabold text-black tracking-tight">
             Pre-registro
@@ -128,19 +128,19 @@ export const PreRegistrationPage: React.FC = () => {
         </div>
 
 
-        {/* Office Info & Servientrega Banner */}
+        {/* Office Info & Delivery Banner */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           <div className="bg-white p-5 rounded-2xl border border-stone-200 flex items-start gap-3.5 shadow-2xs">
             <div className="w-10 h-10 rounded-xl bg-[#00795F]/10 flex items-center justify-center text-[#00795F] shrink-0 mt-0.5">
               <Building2 className="w-5 h-5" />
             </div>
             <div className="text-xs sm:text-sm space-y-1">
-              <h3 className="font-extrabold text-black uppercase tracking-tight">HGW PANAMÁ (Ubicación)</h3>
+              <h3 className="font-extrabold text-black uppercase tracking-tight">HGW COSTA RICA (Ubicación)</h3>
               <p className="text-stone-700 leading-snug">
-                Avenida Porras, Plaza Royal Blue, Local No. 6, Provincia de PANAMÁ, Corregimiento de San Francisco.
+                San José El Carmen, Avenida 5 Calle 1, San José, Costa Rica.
               </p>
               <p className="text-stone-500 font-medium">
-                Contacto: <strong>+507 392-8415</strong>
+                Contacto: <strong>+506 7185-5885</strong>
               </p>
             </div>
           </div>
@@ -152,7 +152,7 @@ export const PreRegistrationPage: React.FC = () => {
             <div className="text-xs sm:text-sm space-y-1">
               <h3 className="font-extrabold text-black uppercase tracking-tight">Horarios de Atención</h3>
               <p className="text-stone-700 leading-snug">
-                Lunes a Viernes: 09:00 am a 06:00 pm | Sábados: 09:00 am a 01:00 pm
+                Lunes a Viernes: 09:00 am a 05:30 pm | Sábados: 10:00 am a 02:00 pm
               </p>
               <p className="text-stone-500 font-medium">
                 Domingo y Festivos: <strong>Cerrado</strong>
@@ -174,7 +174,7 @@ export const PreRegistrationPage: React.FC = () => {
                 ¡Solicitud de Pre-registro Enviada!
               </h2>
               <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
-                Tu información ha sido registrada y enviada con éxito al sistema de atención en Panamá (hgwpanama507g@gmail.com). Un representante se pondrá en contacto contigo para coordinar la activación, selección de productos y pago.
+                Tu información ha sido registrada y enviada con éxito al sistema de atención en Costa Rica (hgwcostarica@gmail.com). Un representante se pondrá en contacto contigo para coordinar la activación, selección de productos y pago.
               </p>
               <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                 <button
@@ -359,7 +359,7 @@ export const PreRegistrationPage: React.FC = () => {
                       required
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="+507 6000-0000"
+                      placeholder="+506 7000-0000"
                       className="w-full px-4 py-3 text-sm bg-white border border-stone-300 rounded-xl text-black placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#00795F]/30 focus:border-[#00795F] font-medium"
                     />
                   </div>
@@ -374,18 +374,13 @@ export const PreRegistrationPage: React.FC = () => {
                         onChange={(e) => setProvince(e.target.value)}
                         className="w-full px-4 py-3 text-sm bg-white border border-stone-300 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-[#00795F]/30 focus:border-[#00795F] font-medium"
                       >
-                        <option value="Panamá">Panamá</option>
-                        <option value="Panamá Oeste">Panamá Oeste</option>
-                        <option value="Colón">Colón</option>
-                        <option value="Chiriquí">Chiriquí</option>
-                        <option value="Coclé">Coclé</option>
-                        <option value="Veraguas">Veraguas</option>
-                        <option value="Herrera">Herrera</option>
-                        <option value="Los Santos">Los Santos</option>
-                        <option value="Bocas del Toro">Bocas del Toro</option>
-                        <option value="Darién">Darién</option>
-                        <option value="Comarca Guna Yala">Comarca Guna Yala</option>
-                        <option value="Comarca Ngäbe-Buglé">Comarca Ngäbe-Buglé</option>
+                        <option value="San José">San José</option>
+                        <option value="Alajuela">Alajuela</option>
+                        <option value="Cartago">Cartago</option>
+                        <option value="Heredia">Heredia</option>
+                        <option value="Guanacaste">Guanacaste</option>
+                        <option value="Puntarenas">Puntarenas</option>
+                        <option value="Limón">Limón</option>
                       </select>
                       <input
                         type="text"
@@ -426,7 +421,7 @@ export const PreRegistrationPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Delivery & Payment (Implicitly needed for HGW Panamá flow) */}
+              {/* Delivery & Payment (Implicitly needed for HGW Costa Rica flow) */}
               <div>
                 <label className="block text-xs font-black text-black uppercase tracking-wider mb-3">
                   {accountType === 'distribuidor' ? '4.' : '3.'} Preferencias de Entrega y Pago
@@ -442,8 +437,8 @@ export const PreRegistrationPage: React.FC = () => {
                       onChange={(e) => setDeliveryMethod(e.target.value)}
                       className="w-full px-4 py-3 text-sm bg-white border border-stone-300 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-[#00795F]/30 focus:border-[#00795F] font-medium"
                     >
-                      <option value="Servientrega (Envío a Domicilio)">Servientrega (Envío a Domicilio)</option>
-                      <option value="Retiro en Oficina (Avenida Porras)">Retiro en Oficina (San Francisco)</option>
+                      <option value="Correos de Costa Rica (Envío a Domicilio)">Correos de Costa Rica (Envío a Domicilio)</option>
+                      <option value="Retiro en Oficina (San José)">Retiro en Oficina (San José)</option>
                     </select>
                   </div>
 
@@ -456,8 +451,8 @@ export const PreRegistrationPage: React.FC = () => {
                       onChange={(e) => setPaymentMethod(e.target.value)}
                       className="w-full px-4 py-3 text-sm bg-white border border-stone-300 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-[#00795F]/30 focus:border-[#00795F] font-medium"
                     >
-                      <option value="Yappy (Banco General)">Yappy (Banco General)</option>
-                      <option value="Transferencia Bancaria ACH">Transferencia Bancaria ACH</option>
+                      <option value="SINPE Móvil">SINPE Móvil</option>
+                      <option value="Transferencia Bancaria">Transferencia Bancaria</option>
                       <option value="Efectivo en Oficina">Efectivo en Oficina</option>
                     </select>
                   </div>
@@ -505,7 +500,7 @@ export const PreRegistrationPage: React.FC = () => {
               </button>
 
               <p className="text-xs text-stone-500 text-center leading-relaxed">
-                Tus datos están protegidos y serán procesados exclusivamente para tu registro en HGW Panamá. Se enviará una copia automática al correo <strong className="text-black">hgwpanama507g@gmail.com</strong>.
+                Tus datos están protegidos y serán procesados exclusivamente para tu registro en HGW Costa Rica. Se enviará una copia automática al correo <strong className="text-black">hgwcostarica@gmail.com</strong>.
               </p>
             </form>
           )}

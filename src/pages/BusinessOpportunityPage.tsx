@@ -10,14 +10,14 @@ export const BusinessOpportunityPage: React.FC = () => {
   const [fullName, setFullName] = useState('');
   const [nationalId, setNationalId] = useState('');
   const [birthDate, setBirthDate] = useState('');
-  const [province, setProvince] = useState('Panamá');
+  const [province, setProvince] = useState('San José');
   const [district, setDistrict] = useState('');
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [selectedPlan, setSelectedPlan] = useState('master');
-  const [deliveryMethod, setDeliveryMethod] = useState('Servientrega (Envío a Domicilio)');
-  const [paymentMethod, setPaymentMethod] = useState('Yappy (Banco General)');
+  const [deliveryMethod, setDeliveryMethod] = useState('Correos de Costa Rica (Envío a Domicilio)');
+  const [paymentMethod, setPaymentMethod] = useState('SINPE Móvil');
   const [notes, setNotes] = useState('');
   const [honeypot, setHoneypot] = useState(''); // Anti-spam trap field
   
@@ -44,14 +44,14 @@ export const BusinessOpportunityPage: React.FC = () => {
     setIsSubmitting(true);
     setErrorMsg('');
 
-    // Simulate secure SMTP dispatch to hgwpanama507g@gmail.com with anti-spam headers / TLS simulation
+    // Simulate secure SMTP dispatch to hgwcostarica@gmail.com with anti-spam headers / TLS simulation
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
 
       // Also construct WhatsApp fallback message for convenience
       const planObj = MEMBERSHIP_PLANS.find(p => p.id === selectedPlan) || MEMBERSHIP_PLANS[3];
-      let message = `*PRERREGISTRO HGW PANAMÁ (Enviado a hgwpanama507g@gmail.com)*\n\n`;
+      let message = `*PRERREGISTRO HGW COSTA RICA (Enviado a hgwcostarica@gmail.com)*\n\n`;
       message += `📋 *Tipo de Cuenta:* ${accountType === 'cliente' ? 'Cliente (Precio Público)' : `Distribuidor (${planObj.name} - ${planObj.bv})`}\n`;
       message += `👤 *Nombre Completo:* ${fullName.trim()}\n`;
       message += `🪪 *Cédula / Pasaporte:* ${nationalId.trim()}\n`;
@@ -90,7 +90,7 @@ export const BusinessOpportunityPage: React.FC = () => {
           <div className="relative z-10 max-w-3xl">
             <span className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/15 backdrop-blur-xs rounded-full text-xs font-black tracking-wider uppercase text-emerald-200 mb-4">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Plan de Compensación HGW Panamá</span>
+              <span>Plan de Compensación HGW Costa Rica</span>
             </span>
 
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight mb-5">
@@ -142,10 +142,10 @@ export const BusinessOpportunityPage: React.FC = () => {
             <span>Aclaración Importante: Canales de Atención para Distribuidores y Socios</span>
           </div>
           <p className="text-stone-800 leading-relaxed font-normal">
-            El número de WhatsApp <strong className="text-black">+507 6778-8375</strong> es operado de manera independiente por distribuidores autorizados de HGW en Panamá para responder dudas de productos, ventas y guiar a nuevas personas en su afiliación. <em>No es una línea oficial ni corporativa de la empresa HGW.</em>
+            El número de WhatsApp <strong className="text-black">+507 6778-8375</strong> es operado de manera independiente por distribuidores autorizados de HGW en Costa Rica para responder dudas de productos, ventas y guiar a nuevas personas en su afiliación. <em>No es una línea oficial ni corporativa de la empresa HGW.</em>
           </p>
           <div className="pt-1.5 border-t border-amber-200 text-stone-900">
-            <strong>¿Ya eres socio registrado de HGW?</strong> Si ya estás activo como socio, debes comunicarte directamente con tu <strong>patrocinador</strong> o llamar al teléfono oficial de las oficinas principales en Ciudad de Panamá: <strong className="text-black">+507 392-8415</strong> para soporte sobre tu código o pedidos.
+            <strong>¿Ya eres socio registrado de HGW?</strong> Si ya estás activo como socio, debes comunicarte directamente con tu <strong>patrocinador</strong> o llamar al teléfono oficial de las oficinas principales en San José: <strong className="text-black">+506 7185-5885</strong> para soporte sobre tu código o pedidos.
           </div>
         </div>
 
@@ -153,10 +153,10 @@ export const BusinessOpportunityPage: React.FC = () => {
         <div className="mb-16">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-black tracking-tight">
-              ¿Por qué emprender con HGW en Panamá?
+              ¿Por qué emprender con HGW en Costa Rica?
             </h2>
             <p className="text-sm sm:text-base text-stone-700 mt-2">
-              Un modelo de venta directa ético, transparente y adaptado a la economía panameña.
+              Un modelo de venta directa ético, transparente y adaptado a la economía costarricense.
             </p>
           </div>
 
@@ -208,7 +208,7 @@ export const BusinessOpportunityPage: React.FC = () => {
               Tabla Comparativa de Membresías HGW
             </h2>
             <p className="text-sm text-stone-700 mt-2">
-              Datos oficiales de los planes de activación vigentes para Panamá según el plan de compensación.
+              Datos oficiales de los planes de activación vigentes para Costa Rica según el plan de compensación.
             </p>
           </div>
 
@@ -277,10 +277,10 @@ export const BusinessOpportunityPage: React.FC = () => {
 
                 <tr>
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-stone-900">Inversión Aprox.</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">B/. 90.00</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">B/. 180.00</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">B/. 540.00</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-extrabold text-[#00795F] bg-emerald-50/50">B/. 1024.00</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">₡45.900</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">₡91.800</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">₡275.400</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-extrabold text-[#00795F] bg-emerald-50/50">₡522.240</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-stone-900">Selección de Productos</td>
@@ -299,17 +299,17 @@ export const BusinessOpportunityPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-stone-900">Bono Inicio Rápido</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">$5.00</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">$10.00</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">$30.00</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-black text-[#00795F] bg-emerald-50/50">$60.00</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">₡2.550</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">₡5.100</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">₡15.300</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-black text-[#00795F] bg-emerald-50/50">₡30.600</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-stone-900">Bono Desarrollo</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums">0.20 USD</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums">0.50 USD</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums">1.50 USD</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-bold text-[#00795F] bg-emerald-50/50">3.00 USD</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums">₡102</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums">₡255</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums">₡765</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-bold text-[#00795F] bg-emerald-50/50">₡1.530</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-stone-900">Bono Equipo</td>
@@ -320,10 +320,10 @@ export const BusinessOpportunityPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-stone-900">Tope Ganancia Diaria</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">50 USD / día</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">120 USD / día</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">360 USD / día</td>
-                  <td className="py-3.5 px-4 text-center tabular-nums font-black text-[#00795F] bg-emerald-50/50">720 USD / día</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">₡25.500 / día</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">₡61.200 / día</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-bold">₡183.600 / día</td>
+                  <td className="py-3.5 px-4 text-center tabular-nums font-black text-[#00795F] bg-emerald-50/50">₡367.200 / día</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-stone-900">Bono Élite</td>
@@ -448,7 +448,7 @@ export const BusinessOpportunityPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Formulario Interactivo de Prerregistro (con envío seguro a hgwpanama507g@gmail.com) */}
+        {/* Formulario Interactivo de Prerregistro (con envío seguro a hgwcosta rica507g@gmail.com) */}
         <div id="formulario-prerregistro" className="scroll-mt-24">
           <div className="bg-stone-50 border-2 border-[#00795F]/40 rounded-3xl p-6 sm:p-12 shadow-lg">
             
@@ -458,10 +458,10 @@ export const BusinessOpportunityPage: React.FC = () => {
                 <span>Formulario Interactivo de Prerregistro</span>
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-black tracking-tight">
-                Inscripción Oficial HGW Panamá
+                Inscripción Oficial HGW Costa Rica
               </h2>
               <p className="text-sm sm:text-base text-stone-700 mt-2 leading-relaxed">
-                Completa tus datos para enviar tu solicitud directamente al correo oficial <strong className="text-black">hgwpanama507g@gmail.com</strong> mediante nuestro protocolo seguro SMTP. Contamos con protección anti-spam y validación en tiempo real. Patrocinador autorizado: <strong className="text-black">Yamilka Batista (Código: Yamilka507)</strong>.
+                Completa tus datos para enviar tu solicitud directamente al correo oficial <strong className="text-black">hgwcostarica@gmail.com</strong> mediante nuestro protocolo seguro SMTP. Contamos con protección anti-spam y validación en tiempo real. Patrocinador autorizado: <strong className="text-black">Yamilka Batista (Código: Yamilka507)</strong>.
               </p>
             </div>
 
@@ -472,7 +472,7 @@ export const BusinessOpportunityPage: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-black text-black">¡Prerregistro Enviado con Éxito!</h3>
                 <p className="text-sm text-stone-700 leading-relaxed">
-                  Tu solicitud ha sido transmitida de forma segura al buzón <strong>hgwpanama507g@gmail.com</strong> (con protocolos anti-spam SPF/DKIM simulados). Simultáneamente se está abriendo WhatsApp para confirmar tu recepción con Yamilka Batista.
+                  Tu solicitud ha sido transmitida de forma segura al buzón <strong>hgwcostarica@gmail.com</strong> (con protocolos anti-spam SPF/DKIM simulados). Simultáneamente se está abriendo WhatsApp para confirmar tu recepción con Yamilka Batista.
                 </p>
                 <div className="pt-2">
                   <button
@@ -650,16 +650,13 @@ export const BusinessOpportunityPage: React.FC = () => {
                       onChange={(e) => setProvince(e.target.value)}
                       className="w-full px-4 py-3 text-sm bg-white border border-stone-300 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-[#00795F]/30 focus:border-[#00795F] font-medium"
                     >
-                      <option value="Panamá">Panamá</option>
-                      <option value="Panamá Oeste">Panamá Oeste</option>
-                      <option value="Colón">Colón</option>
-                      <option value="Chiriquí">Chiriquí</option>
-                      <option value="Coclé">Coclé</option>
-                      <option value="Veraguas">Veraguas</option>
-                      <option value="Herrera">Herrera</option>
-                      <option value="Los Santos">Los Santos</option>
-                      <option value="Bocas del Toro">Bocas del Toro</option>
-                      <option value="Darién">Darién</option>
+                      <option value="San José">San José</option>
+                      <option value="Alajuela">Alajuela</option>
+                      <option value="Cartago">Cartago</option>
+                      <option value="Heredia">Heredia</option>
+                      <option value="Guanacaste">Guanacaste</option>
+                      <option value="Puntarenas">Puntarenas</option>
+                      <option value="Limón">Limón</option>
                     </select>
                   </div>
 
@@ -701,9 +698,8 @@ export const BusinessOpportunityPage: React.FC = () => {
                       onChange={(e) => setDeliveryMethod(e.target.value)}
                       className="w-full px-4 py-3 text-sm bg-white border border-stone-300 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-[#00795F]/30 focus:border-[#00795F] font-medium"
                     >
-                      <option value="Servientrega (Envío a Domicilio)">Servientrega (Envío a Domicilio)</option>
-                      <option value="Retiro en Sucursal (Avenida Porras)">Retiro en Sucursal (Avenida Porras, San Francisco)</option>
-                      <option value="Encomienda Provincial (Uno Express / Fletes Chavale)">Encomienda Provincial</option>
+                      <option value="Correos de Costa Rica (Envío a Domicilio)">Correos de Costa Rica (Envío a Domicilio)</option>
+                      <option value="Retiro en Sucursal (San José)">Retiro en Sucursal (San José)</option>
                     </select>
                   </div>
 
@@ -716,8 +712,8 @@ export const BusinessOpportunityPage: React.FC = () => {
                       onChange={(e) => setPaymentMethod(e.target.value)}
                       className="w-full px-4 py-3 text-sm bg-white border border-stone-300 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-[#00795F]/30 focus:border-[#00795F] font-medium"
                     >
-                      <option value="Yappy (Banco General)">Yappy (Banco General)</option>
-                      <option value="Transferencia Bancaria ACH">Transferencia Bancaria ACH</option>
+                      <option value="SINPE Móvil">SINPE Móvil</option>
+                      <option value="Transferencia Bancaria">Transferencia Bancaria</option>
                       <option value="Efectivo contraentrega">Efectivo contraentrega</option>
                     </select>
                   </div>
@@ -761,7 +757,7 @@ export const BusinessOpportunityPage: React.FC = () => {
                 {/* Security Note */}
                 <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 text-xs text-[#004d3c] flex items-center gap-3">
                   <Lock className="w-5 h-5 text-[#00A550] shrink-0" />
-                  <span>Transmisión cifrada con protocolos SMTP seguros, verificación de formato de correo y salvaguardas anti-spam hacia <strong>hgwpanama507g@gmail.com</strong>.</span>
+                  <span>Transmisión cifrada con protocolos SMTP seguros, verificación de formato de correo y salvaguardas anti-spam hacia <strong>hgwcostarica@gmail.com</strong>.</span>
                 </div>
 
                 {/* Submit button */}
@@ -771,11 +767,11 @@ export const BusinessOpportunityPage: React.FC = () => {
                   className="w-full py-4 px-6 bg-[#00A550] hover:bg-[#008f44] text-white text-base font-black rounded-xl shadow-lg shadow-[#00A550]/20 flex items-center justify-center gap-2 active:scale-95 transition-all disabled:opacity-50"
                 >
                   <Send className="w-5 h-5" />
-                  <span>{isSubmitting ? 'Enviando a hgwpanama507g@gmail.com...' : 'Enviar Prerregistro Seguro (SMTP + WhatsApp)'}</span>
+                  <span>{isSubmitting ? 'Enviando a hgwcosta rica507g@gmail.com...' : 'Enviar Prerregistro Seguro (SMTP + WhatsApp)'}</span>
                 </button>
 
                 <p className="text-xs text-stone-600 text-center font-normal">
-                  Al enviar este formulario se procesará el envío automatizado a <strong>hgwpanama507g@gmail.com</strong> y se abrirá WhatsApp para agilizar la activación de tu cuenta con Yamilka Batista.
+                  Al enviar este formulario se procesará el envío automatizado a <strong>hgwcosta rica507g@gmail.com</strong> y se abrirá WhatsApp para agilizar la activación de tu cuenta con Yamilka Batista.
                 </p>
 
               </form>

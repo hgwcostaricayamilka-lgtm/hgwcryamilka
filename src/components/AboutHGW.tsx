@@ -5,7 +5,7 @@ import { getAffiliationWhatsAppUrl } from '../utils/whatsapp';
 
 export const DIRECT_SALES_ASSOCIATIONS = [
   {
-    name: "Asociación Panameña de Venta Directa (APVD)",
+    name: "Asociación Costarricense de Venta Directa (APVD)",
     country: "Costa Rica",
     description: "Organismo que agrupa y regula a las empresas y distribuidores éticos de venta directa en la República de Costa Rica.",
     imageUrl: "https://media.academiahgw.online/wp-content/uploads/2026/11/Asociacion-Panamena-de-Venta-directa.webp"
@@ -168,7 +168,7 @@ export const AboutHGW: React.FC = () => {
                   <Mail className="w-5 h-5 text-[#00A550] shrink-0" />
                   <div>
                     <span className="text-xs text-stone-500 block">Correo para Pre-registro</span>
-                    <strong className="text-black font-extrabold text-sm sm:text-base select-all">hgwCosta Rica507g@gmail.com</strong>
+                    <strong className="text-black font-extrabold text-sm sm:text-base select-all">hgwcostarica@gmail.com</strong>
                   </div>
                 </div>
               </div>
@@ -179,7 +179,7 @@ export const AboutHGW: React.FC = () => {
                   <strong className="text-amber-900 font-extrabold">Aclaración de Atención al Cliente:</strong> El número de WhatsApp publicado corresponde exclusivamente a la atención de un <strong>distribuidor independiente</strong> para consultas comerciales, pedidos y nuevos afiliados. <em>No es una línea oficial de la empresa HGW.</em>
                 </p>
                 <p className="text-stone-700 leading-relaxed font-medium">
-                  📌 <strong>¿Ya eres socio registrado de HGW?</strong> Si ya estás registrado como socio, por favor comunícate directamente con tu <strong>patrocinador</strong> o con el teléfono de las oficinas principales en Costa Rica: <strong className="text-black">+507 392-8415</strong> para recibir asistencia en tus pedidos internos o consultas de código.
+                  📌 <strong>¿Ya eres socio registrado de HGW?</strong> Si ya estás registrado como socio, por favor comunícate directamente con tu <strong>patrocinador</strong> o con el teléfono de las oficinas principales en Costa Rica: <strong className="text-black">+506 7185-5885</strong> para recibir asistencia en tus pedidos internos o consultas de código.
                 </p>
               </div>
             </div>

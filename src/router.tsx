@@ -95,7 +95,7 @@ export const RouterProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   // Update browser tab title dynamically in Yoast SEO format: Título de la página – Separador – Título del sitio
   useEffect(() => {
     const pageTitle = getPageTitle(currentPath);
-    document.title = `${pageTitle} – HGW Panamá`;
+    document.title = `${pageTitle} – HGW Costa Rica`;
   }, [currentPath]);
 
   const navigate = (to: string) => {

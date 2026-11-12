@@ -209,7 +209,7 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {displayedProducts.map((product) => {
               const productUrl = `/producto/${product.slug}`;
-              const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwCosta Rica.com/productos';
+              const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwcostarica.com/productos';
               const whatsappOrderText = encodeURIComponent(
                 `¡Hola! Estaba visitando tu tienda online (${currentUrl}) y quería consultar o adquirir el producto "${product.name}" (${product.priceFormatted}). Mi nombre es:`
               );
