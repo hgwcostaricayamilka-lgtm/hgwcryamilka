@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Link, useRouter } from '../router';
 import { getAffiliationWhatsAppUrl } from '../utils/whatsapp';
+import { useLanguage } from '../context/LanguageContext';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface NavbarProps {}
 
@@ -10,6 +12,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
   const [contactDropdownOpen, setContactDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { currentPath } = useRouter();
+  const { t } = useLanguage();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -23,17 +26,17 @@ export const Navbar: React.FC<NavbarProps> = () => {
   }, []);
 
   const mainLinks = [
-    { label: 'Inicio', href: '/' },
-    { label: 'Productos', href: '/productos' },
-    { label: 'Membresías', href: '/membresias' },
-    { label: 'Oportunidad de Negocio', href: '/oportunidad-de-negocio' },
-    { label: 'Pre-registro', href: '/preregistro' },
-    { label: 'Documentos PDF', href: '/documentos' },
+    { label: t('nav.home', 'Inicio'), href: '/' },
+    { label: t('nav.products', 'Productos'), href: '/productos' },
+    { label: t('nav.memberships', 'Membresías'), href: '/membresias' },
+    { label: t('nav.business', 'Oportunidad de Negocio'), href: '/oportunidad-de-negocio' },
+    { label: t('nav.preregister', 'Pre-registro'), href: '/preregistro' },
+    { label: t('nav.documents', 'Documentos PDF'), href: '/documentos' },
   ];
 
   const contactLinks = [
-    { label: 'Contacto y Envíos', href: '/contacto' },
-    { label: 'Oficinas HGW LATAM', href: '/oficinas' },
+    { label: t('nav.contact_shipping', 'Contacto y Envíos'), href: '/contacto' },
+    { label: t('nav.offices', 'Oficinas HGW LATAM'), href: '/oficinas' },
   ];
 
   return (
@@ -83,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     : 'text-stone-900 hover:text-[#00795F]'
                 }`}
               >
-                <span>Contacto</span>
+                <span>{t('nav.contact', 'Contacto')}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${contactDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -108,8 +111,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
             </div>
           </nav>
 
-          {/* Zone 3: Direct WhatsApp Phone & Menu Trigger */}
-          <div className="flex items-center gap-3 shrink-0">
+          {/* Zone 3: Language Switcher, Direct WhatsApp Phone & Menu Trigger */}
+          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+            <LanguageSwitcher variant="navbar" />
+
             <a
               href={getAffiliationWhatsAppUrl()}
               onClick={(e) => {
@@ -138,7 +143,15 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
       {/* Mobile navigation dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-stone-200 bg-white px-4 pt-3 pb-6 shadow-xl animate-fade-in overflow-y-auto max-h-[85vh]">
+        <div className="lg:hidden border-t border-stone-200 bg-white px-4 pt-4 pb-6 shadow-xl animate-fade-in overflow-y-auto max-h-[85vh]">
+          {/* Mobile Language Switcher */}
+          <div className="mb-4">
+            <span className="text-[10px] font-black uppercase text-stone-400 tracking-wider block mb-1.5 px-1">
+              {t('nav.lang', 'Idioma')} / Language
+            </span>
+            <LanguageSwitcher variant="mobile" />
+          </div>
+
           <div className="flex flex-col gap-1">
             {mainLinks.map((link) => {
               const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));

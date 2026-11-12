@@ -17,12 +17,14 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { getProductWhatsAppUrl } from '../utils/whatsapp';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ProductDetailPageProps {
   slug: string;
 }
 
 export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) => {
+  const { language, t } = useLanguage();
   const product = PRODUCTS.find((p) => p.slug === slug || p.id === slug || p.code === slug);
 
   if (!product) {
@@ -31,10 +33,10 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
         <div className="w-16 h-16 rounded-full bg-stone-200 flex items-center justify-center text-stone-500 mb-4">
           <Info className="w-8 h-8" />
         </div>
-        <h2 className="text-2xl sm:text-3xl font-black text-stone-900 mb-2">Producto no encontrado</h2>
-        <p className="text-stone-600 mb-6 max-w-md">El producto que buscas no existe en el catálogo oficial de HGW Costa Rica o fue retirado.</p>
+        <h2 className="text-2xl sm:text-3xl font-black text-stone-900 mb-2">{t('p.not_found_title', 'Producto no encontrado')}</h2>
+        <p className="text-stone-600 mb-6 max-w-md">{t('p.not_found_desc', 'El producto que buscas no existe en el catálogo oficial de HGW Costa Rica o fue retirado.')}</p>
         <Link to="/productos" className="px-6 py-3 bg-[#00795F] hover:bg-[#004d3c] text-white font-black rounded-xl transition-all shadow-md">
-          Volver al Catálogo Oficial
+          {t('p.btn_back_catalog', 'Volver al Catálogo Oficial')}
         </Link>
       </div>
     );
@@ -42,20 +44,20 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
 
   const [activeTab, setActiveTab] = useState<'benefits' | 'ingredients' | 'usage'>('benefits');
   const [whatsappHref, setWhatsappHref] = useState(() => 
-    getProductWhatsAppUrl(product.name, product.priceFormatted)
+    getProductWhatsAppUrl(product.name, product.priceFormatted, undefined, language)
   );
   const registrationUrl = "https://www.healthgreenworld.com/?userName=Yamilka507";
 
-  // Dynamically update WhatsApp URL with current page URL just like the floating button
+  // Dynamically update WhatsApp URL with current page URL and language
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
-      setWhatsappHref(getProductWhatsAppUrl(product.name, product.priceFormatted, window.location.href));
+      setWhatsappHref(getProductWhatsAppUrl(product.name, product.priceFormatted, window.location.href, language));
     }
-  }, [product.name, product.priceFormatted]);
+  }, [product.name, product.priceFormatted, language]);
 
   const handleOpenWhatsApp = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (typeof window !== 'undefined') {
-      const freshUrl = getProductWhatsAppUrl(product.name, product.priceFormatted, window.location.href);
+      const freshUrl = getProductWhatsAppUrl(product.name, product.priceFormatted, window.location.href, language);
       e.currentTarget.href = freshUrl;
     }
   };
@@ -66,9 +68,9 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
         
         {/* Breadcrumb Navigation */}
         <nav className="flex items-center gap-2 text-xs sm:text-sm font-medium text-stone-500 mb-8 overflow-x-auto whitespace-nowrap pb-2">
-          <Link to="/" className="hover:text-[#00795F] transition-colors font-bold">Inicio</Link>
+          <Link to="/" className="hover:text-[#00795F] transition-colors font-bold">{t('nav.home', 'Inicio')}</Link>
           <ChevronRight className="w-3.5 h-3.5 text-stone-300 shrink-0" />
-          <Link to="/productos" className="hover:text-[#00795F] transition-colors font-bold">Productos Costa Rica</Link>
+          <Link to="/productos" className="hover:text-[#00795F] transition-colors font-bold">{t('nav.products', 'Productos Costa Rica')}</Link>
           <ChevronRight className="w-3.5 h-3.5 text-stone-300 shrink-0" />
           <span className="text-[#00795F] font-bold truncate">{product.categoryLabel}</span>
           <ChevronRight className="w-3.5 h-3.5 text-stone-300 shrink-0" />
@@ -85,7 +87,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
               {product.code && (
                 <div className="absolute top-6 left-6 px-3.5 py-1.5 bg-stone-900/90 text-white text-xs font-black rounded-xl tracking-wider shadow-sm flex items-center gap-1.5 backdrop-blur-sm">
                   <span className="w-2 h-2 rounded-full bg-[#00A550]" />
-                  <span>CÓDIGO: {product.code}</span>
+                  <span>{t('p.code', 'CÓDIGO:')} {product.code}</span>
                 </div>
               )}
 
@@ -93,11 +95,11 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
               <div className="absolute top-6 right-6">
                 {product.inStock ? (
                   <span className="px-3.5 py-1.5 bg-emerald-100 text-[#00795F] text-xs font-black rounded-xl uppercase tracking-wider border border-emerald-200 shadow-2xs">
-                    En Stock Costa Rica
+                    {t('p.in_stock', 'En Stock Costa Rica')}
                   </span>
                 ) : (
                   <span className="px-3.5 py-1.5 bg-amber-100 text-amber-800 text-xs font-black rounded-xl uppercase tracking-wider border border-amber-200">
-                    Bajo Pedido
+                    {t('p.on_demand', 'Bajo Pedido')}
                   </span>
                 )}
               </div>
@@ -116,7 +118,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
             <div className="grid grid-cols-3 gap-2 p-3 bg-stone-50 rounded-2xl border border-stone-200 text-center text-xs">
               <div className="p-2">
                 <ShieldCheck className="w-4 h-4 text-[#00795F] mx-auto mb-1" />
-                <span className="font-bold text-stone-800">100% Original</span>
+                <span className="font-bold text-stone-800">{t('hero.guarantee_1', '100% Original')}</span>
               </div>
               <div className="p-2 border-x border-stone-200">
                 <Award className="w-4 h-4 text-[#00795F] mx-auto mb-1" />
@@ -149,13 +151,13 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
             {/* Price section with Costa Rican currency */}
             <div className="flex items-baseline gap-4 mb-6 border-b border-stone-100 pb-6">
               <div>
-                <span className="text-xs font-bold text-stone-500 block uppercase tracking-wider">Precio Oficial Costa Rica:</span>
+                <span className="text-xs font-bold text-stone-500 block uppercase tracking-wider">{t('p.price_label', 'Precio Oficial Costa Rica:')}</span>
                 <p className="text-3xl sm:text-4xl font-black text-[#00795F] tabular-nums">
                   {product.priceFormatted}
                 </p>
               </div>
               <span className="text-xs font-semibold text-stone-500 bg-stone-100 px-3 py-1.5 rounded-xl">
-                Moneda local: Colones (CRC)
+                {t('p.currency_note', 'Moneda local: Colones (CRC)')}
               </span>
             </div>
 
@@ -168,25 +170,25 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
             <div className="grid grid-cols-2 gap-3 p-4 sm:p-5 bg-stone-50 rounded-2xl border border-stone-200/80 mb-6">
               {product.netContent && (
                 <div>
-                  <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block">Contenido Neto</span>
+                  <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block">{t('p.net_content', 'Contenido Neto')}</span>
                   <span className="text-sm font-extrabold text-stone-900">{product.netContent}</span>
                 </div>
               )}
               {product.servingsOrUnits && (
                 <div>
-                  <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block">Porciones / Unidades</span>
+                  <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block">{t('p.servings', 'Porciones / Unidades')}</span>
                   <span className="text-sm font-extrabold text-stone-900">{product.servingsOrUnits}</span>
                 </div>
               )}
               {product.shelfLife && (
                 <div>
-                  <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block">Vida Útil</span>
+                  <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block">{t('p.shelf_life', 'Vida Útil')}</span>
                   <span className="text-sm font-extrabold text-stone-900">{product.shelfLife}</span>
                 </div>
               )}
               {product.presentation && (
                 <div>
-                  <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block">Presentación</span>
+                  <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block">{t('p.presentation', 'Presentación')}</span>
                   <span className="text-sm font-extrabold text-stone-900">{product.presentation}</span>
                 </div>
               )}
@@ -197,7 +199,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
               <div className="mb-6 p-4 bg-emerald-50/70 border border-emerald-100 rounded-2xl">
                 <span className="text-xs font-black text-[#00795F] uppercase tracking-wider block mb-2 flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-[#00A550]" />
-                  Ventajas Principales del Catálogo:
+                  {t('p.advantages_title', 'Ventajas Principales del Catálogo:')}
                 </span>
                 <ul className="space-y-1.5">
                   {product.advantages.map((adv, idx) => (
@@ -214,10 +216,10 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
             <div className="pt-4 border-t border-stone-200 space-y-3">
               <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-2xl shadow-2xs">
                 <div className="flex items-center text-amber-900 font-black mb-0.5 text-sm">
-                  <AlertTriangle className="mr-2 w-4 h-4 shrink-0 text-amber-600" /> Disponibilidad en Costa Rica
+                  <AlertTriangle className="mr-2 w-4 h-4 shrink-0 text-amber-600" /> {t('p.notice_title', 'Disponibilidad en Costa Rica')}
                 </div>
                 <p className="text-xs sm:text-sm text-amber-800 leading-relaxed font-medium">
-                  Coordine su pedido o entrega en San José y provincias con la distribuidora autorizada vía WhatsApp.
+                  {t('p.notice_text', 'Coordine su pedido o entrega en San José y provincias con la distribuidora autorizada vía WhatsApp.')}
                 </p>
               </div>
 
@@ -230,7 +232,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                 className="w-full py-4 px-6 bg-[#00795F] hover:bg-[#004d3c] text-white font-black text-base sm:text-lg rounded-2xl shadow-lg shadow-[#00795F]/20 flex items-center justify-center gap-3 transition-all active:scale-95 uppercase tracking-wider"
               >
                 <MessageCircle className="w-5 h-5" />
-                <span>Pedir o Consultar por WhatsApp (+507 6778-8375)</span>
+                <span>{t('p.btn_order_whatsapp', 'Pedir o Consultar por WhatsApp (+507 6778-8375)')}</span>
               </a>
 
               {/* Pre-Registration & Official Registration Buttons */}
@@ -240,7 +242,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                   className="py-3.5 px-4 bg-stone-100 hover:bg-stone-200 text-stone-900 font-black text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95 uppercase tracking-wider border border-stone-200 text-center"
                 >
                   <FileText className="w-4 h-4 text-[#00795F]" />
-                  <span>Formulario Pre-registro</span>
+                  <span>{t('p.btn_preregister', 'Formulario Pre-registro')}</span>
                 </Link>
 
                 <a 
@@ -250,7 +252,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                   className="py-3.5 px-4 bg-emerald-700 hover:bg-emerald-800 text-white font-black text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95 uppercase tracking-wider shadow-sm text-center"
                 >
                   <ExternalLink className="w-4 h-4" />
-                  <span>Activar Cuenta HGW</span>
+                  <span>{t('p.btn_activate', 'Activar Cuenta HGW')}</span>
                 </a>
               </div>
             </div>
@@ -266,15 +268,15 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                 <FileText className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-black text-lg text-stone-900">Ficha Técnica Oficial del Producto</h3>
-                <p className="text-sm text-stone-600">Revisa la documentación analítica, certificaciones y registro en la sección de documentos.</p>
+                <h3 className="font-black text-lg text-stone-900">{t('p.tech_sheet_title', 'Ficha Técnica Oficial del Producto')}</h3>
+                <p className="text-sm text-stone-600">{t('p.tech_sheet_desc', 'Revisa la documentación analítica, certificaciones y registro en la sección de documentos.')}</p>
               </div>
             </div>
             <Link 
               to={`/documentos/${product.technicalDocId}`}
               className="px-8 py-3.5 bg-[#00795F] hover:bg-[#004d3c] text-white font-black text-xs sm:text-sm rounded-xl shadow-sm transition-all active:scale-95 whitespace-nowrap uppercase tracking-wider"
             >
-              Ver Ficha Técnica
+              {t('p.btn_view_tech', 'Ver Ficha Técnica')}
             </Link>
           </div>
         )}
@@ -288,7 +290,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                 activeTab === 'benefits' ? 'text-black border-b-2 border-[#00795F]' : 'text-stone-400 hover:text-black'
               }`}
             >
-              Propiedades y Beneficios
+              {t('p.tab_benefits', 'Propiedades y Beneficios')}
             </button>
             <button
               onClick={() => setActiveTab('ingredients')}
@@ -296,7 +298,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                 activeTab === 'ingredients' ? 'text-black border-b-2 border-[#00795F]' : 'text-stone-400 hover:text-black'
               }`}
             >
-              Ingredientes Naturales y Vegetales
+              {t('p.tab_ingredients', 'Ingredientes Naturales y Vegetales')}
             </button>
             <button
               onClick={() => setActiveTab('usage')}
@@ -304,7 +306,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                 activeTab === 'usage' ? 'text-black border-b-2 border-[#00795F]' : 'text-stone-400 hover:text-black'
               }`}
             >
-              Modo de Uso y Cuidados
+              {t('p.tab_usage', 'Modo de Uso y Cuidados')}
             </button>
           </div>
 
@@ -317,7 +319,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                   <div>
                     <h3 className="text-xl sm:text-2xl font-black text-stone-900 mb-4 flex items-center gap-2">
                       <Sparkles className="w-5 h-5 text-[#00A550]" />
-                      Acción Detallada por Componente Activo (Catálogo Oficial)
+                      {t('p.detailed_benefits_title', 'Acción Detallada por Componente Activo (Catálogo Oficial)')}
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {product.benefitsDetailed.map((item, idx) => (
@@ -337,7 +339,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                 {/* General Benefits List */}
                 <div>
                   <h3 className="text-xl sm:text-2xl font-black text-stone-900 mb-4">
-                    Beneficios Principales
+                    {t('p.general_benefits_title', 'Beneficios Principales')}
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
                     {product.benefits.map((b, i) => (
@@ -355,7 +357,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                 {product.advantages && (
                   <div className="p-6 bg-stone-50 rounded-3xl border border-stone-200">
                     <h4 className="font-black text-base text-stone-900 mb-3 uppercase tracking-wide">
-                      Ventajas Destacadas por HGW Costa Rica
+                      {t('p.catalog_advantages_title', 'Ventajas Destacadas por HGW Costa Rica')}
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {product.advantages.map((adv, idx) => (
@@ -376,15 +378,15 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                 <div>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
                     <h3 className="text-xl sm:text-2xl font-black text-stone-900">
-                      Ingredientes de Origen Natural, Orgánico y Vegetal
+                      {t('p.ingredients_title', 'Ingredientes de Origen Natural, Orgánico y Vegetal')}
                     </h3>
                     <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-[#00795F] rounded-xl text-xs font-black border border-emerald-200 shrink-0">
                       <Sparkles className="w-3.5 h-3.5 text-[#00A550]" />
-                      <span>Fórmula Botánica y Mineral Pura</span>
+                      <span>{t('p.ingredients_badge', 'Fórmula Botánica y Mineral Pura')}</span>
                     </div>
                   </div>
                   <p className="text-stone-600 text-sm mb-5">
-                    Selección exclusiva de principios activos botánicos, extractos herbales, frutos silvestres y minerales naturales de alta pureza:
+                    {t('p.ingredients_subtitle', 'Selección exclusiva de principios activos botánicos, extractos herbales, frutos silvestres y minerales naturales de alta pureza:')}
                   </p>
                   <div className="flex flex-wrap gap-2.5">
                     {product.ingredients?.map((ing, i) => (
@@ -403,7 +405,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                   <div className="p-6 bg-stone-50 rounded-3xl border border-stone-200">
                     <h4 className="text-base font-black text-stone-900 mb-2 flex items-center gap-2">
                       <Info className="w-4 h-4 text-stone-600" />
-                      Precauciones de Uso
+                      {t('p.precautions_title', 'Precauciones de Uso')}
                     </h4>
                     <p className="text-sm sm:text-base text-stone-700 leading-relaxed font-medium">
                       {product.precautions}
@@ -416,7 +418,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                   <div className="p-6 bg-red-50/80 rounded-3xl border-2 border-red-200">
                     <h4 className="text-base font-black text-red-900 mb-2 flex items-center gap-2">
                       <AlertTriangle className="w-5 h-5 text-red-600 shrink-0" />
-                      Contraindicaciones Importantes
+                      {t('p.contraindications_title', 'Contraindicaciones Importantes')}
                     </h4>
                     <p className="text-sm sm:text-base text-red-800 leading-relaxed font-medium">
                       {product.contraindications}
@@ -430,7 +432,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
             {activeTab === 'usage' && (
               <div className="space-y-6 animate-fade-in">
                 <h3 className="text-xl sm:text-2xl font-black text-stone-900 mb-4">
-                  ¿Cómo utilizar este producto de forma óptima?
+                  {t('p.usage_title', '¿Cómo utilizar este producto de forma óptima?')}
                 </h3>
                 <div className="bg-[#00795F] text-white p-8 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden">
                   <div className="absolute -bottom-8 -right-8 p-6 opacity-10">
@@ -438,7 +440,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
                   </div>
                   <div className="relative z-10 space-y-4">
                     <span className="px-3 py-1 bg-white/20 text-white text-xs font-black rounded-lg uppercase tracking-wider inline-block">
-                      Instrucción Oficial HGW
+                      {t('p.official_instruction', 'Instrucción Oficial HGW')}
                     </span>
                     <p className="text-lg sm:text-xl leading-relaxed font-bold">
                       {product.usage || "Consulte la ficha técnica o a su distribuidora autorizada para las dosis recomendadas."}
@@ -448,7 +450,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
 
                 {product.contraindications && (
                   <div className="p-4 bg-amber-50 rounded-2xl border border-amber-200 text-xs sm:text-sm text-amber-900 font-medium">
-                    <span className="font-bold">Nota de seguridad: </span>
+                    <span className="font-bold">{t('p.security_note', 'Nota de seguridad:')} </span>
                     {product.contraindications}
                   </div>
                 )}
@@ -460,16 +462,16 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
         {/* Bottom Callout: Technical Documents Library */}
         <div className="mt-20 p-8 sm:p-12 bg-stone-900 rounded-3xl text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl relative overflow-hidden">
           <div className="relative z-10 text-center md:text-left">
-            <h2 className="text-2xl sm:text-3xl font-black mb-2 text-white">¿Deseas descargar la ficha técnica en PDF?</h2>
+            <h2 className="text-2xl sm:text-3xl font-black mb-2 text-white">{t('p.bottom_callout_title', '¿Deseas descargar la ficha técnica en PDF?')}</h2>
             <p className="text-stone-300 text-sm sm:text-base max-w-xl">
-              Explora nuestra sección de documentos oficiales de Costa Rica con todas las especificaciones y respaldo de la compañía.
+              {t('p.bottom_callout_desc', 'Explora nuestra sección de documentos oficiales de Costa Rica con todas las especificaciones y respaldo de la compañía.')}
             </p>
           </div>
           <Link 
             to="/documentos" 
             className="px-8 py-4 bg-[#00795F] hover:bg-[#00A550] text-white font-black text-sm rounded-xl shadow-lg transition-all active:scale-95 whitespace-nowrap relative z-10 uppercase tracking-wider"
           >
-            Ir a Documentos Oficiales
+            {t('p.bottom_callout_btn', 'Ir a Documentos Oficiales')}
           </Link>
         </div>
 

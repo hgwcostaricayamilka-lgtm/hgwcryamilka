@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RouterProvider, useRouter } from './router';
+import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { NoticeBanner } from './components/NoticeBanner';
 import { Hero } from './components/Hero';
@@ -188,8 +189,10 @@ function AppContent() {
 
 export default function App() {
   return (
-    <RouterProvider>
-      <AppContent />
-    </RouterProvider>
+    <LanguageProvider>
+      <RouterProvider>
+        <AppContent />
+      </RouterProvider>
+    </LanguageProvider>
   );
 }

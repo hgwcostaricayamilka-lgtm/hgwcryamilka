@@ -3,26 +3,28 @@ import { Search, Eye, Sparkles, Filter, ArrowRight, MessageCircle } from 'lucide
 import { Product, PRODUCTS } from '../data/products';
 import { Link } from '../router';
 import { getProductWhatsAppUrl } from '../utils/whatsapp';
+import { useLanguage } from '../context/LanguageContext';
 
 interface CatalogProps {
   isHomeView?: boolean;
 }
 
 export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
+  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [availabilityFilter, setAvailabilityFilter] = useState<'all' | 'in-stock' | 'coming-soon'>('all');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'name'>('featured');
 
   const categories = [
-    { id: 'all', label: 'Todos' },
-    { id: 'cafes-bebidas', label: 'Cafés y Bebidas' },
-    { id: 'candies-snacks', label: 'Candies y Snacks' },
-    { id: 'cuidado-bucal', label: 'Cuidado Bucal' },
-    { id: 'turmalina', label: 'Turmalina y Bienestar' },
-    { id: 'nutricion', label: 'Nutrición y Colágeno' },
-    { id: 'cuidado-personal', label: 'Cuidado Personal' },
-    { id: 'hogar-accesorios', label: 'Hogar y Accesorios' },
+    { id: 'all', label: t('cat.all', 'Todos') },
+    { id: 'cafes-bebidas', label: t('cat.cafes-bebidas', 'Cafés y Bebidas') },
+    { id: 'candies-snacks', label: t('cat.candies-snacks', 'Candies y Snacks') },
+    { id: 'cuidado-bucal', label: t('cat.cuidado-bucal', 'Cuidado Bucal') },
+    { id: 'turmalina', label: t('cat.turmalina', 'Turmalina y Bienestar') },
+    { id: 'nutricion', label: t('cat.nutricion', 'Nutrición y Colágeno') },
+    { id: 'cuidado-personal', label: t('cat.cuidado-personal', 'Cuidado Personal') },
+    { id: 'hogar-accesorios', label: t('cat.hogar-accesorios', 'Hogar y Accesorios') },
   ];
 
   // Filtering logic
@@ -78,21 +80,25 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
           <div>
             <div className="flex items-center gap-2 text-xs font-bold text-[#00795F] uppercase tracking-wider mb-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#00A550]" />
-              <span>Línea Original de Bienestar</span>
+              <span>{t('catalog.badge', 'Línea Original de Bienestar')}</span>
               <span aria-hidden="true" className="text-stone-300">·</span>
               <span>HGW Costa Rica</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight">
-              {isHomeView ? 'Productos Destacados' : 'Catálogo de Productos Oficiales'}
+              {isHomeView ? t('catalog.title_home', 'Productos Destacados') : t('catalog.title_all', 'Catálogo de Productos Oficiales')}
             </h2>
             <p className="text-base text-stone-700 mt-2 max-w-2xl font-normal leading-relaxed">
-              Explora nuestras fórmulas botánicas, cafés funcionales de arándano y ganoderma, tecnología de nanoturmalina y suplementos con precios oficiales en Costa Rica. Cada producto cuenta con su ficha técnica completa.
+              {t('catalog.desc', 'Explora nuestras fórmulas botánicas, cafés funcionales de arándano y ganoderma, tecnología de nanoturmalina y suplementos con precios oficiales en Costa Rica. Cada producto cuenta con su ficha técnica completa.')}
             </p>
           </div>
 
           {/* Quick Counter */}
           <div className="text-sm text-stone-700 font-semibold shrink-0">
-            Mostrando <span className="text-black font-extrabold tabular-nums">{displayedProducts.length}</span> de <span className="text-black font-extrabold tabular-nums">{PRODUCTS.length}</span> productos
+            {t('catalog.showing', 'Mostrando')}{' '}
+            <span className="text-black font-extrabold tabular-nums">{displayedProducts.length}</span>{' '}
+            {t('catalog.of', 'de')}{' '}
+            <span className="text-black font-extrabold tabular-nums">{PRODUCTS.length}</span>{' '}
+            {t('catalog.products_count', 'productos')}
           </div>
         </div>
 
@@ -109,7 +115,7 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Buscar por nombre o ingrediente (arándano, turmalina, ganoderma...)"
+                  placeholder={t('catalog.search_placeholder', 'Buscar por nombre, código o ingrediente...')}
                   className="w-full pl-11 pr-4 py-3 text-sm bg-white border border-stone-300 rounded-xl text-black placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#00795F]/30 focus:border-[#00795F] transition-all font-medium"
                 />
                 {searchQuery && (
@@ -117,12 +123,12 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
                     onClick={() => setSearchQuery('')}
                     className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-stone-500 hover:text-black"
                   >
-                    Limpiar
+                    {t('catalog.search_clear', 'Limpiar')}
                   </button>
                 )}
               </div>
               <button className="px-6 py-3 bg-[#00795F] hover:bg-[#004d3c] text-white font-black text-sm rounded-xl transition-all shadow-sm active:scale-95 whitespace-nowrap uppercase">
-                BUSCAR
+                {t('catalog.search_btn', 'BUSCAR')}
               </button>
             </div>
 
@@ -136,7 +142,7 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
                     : 'text-stone-700 hover:text-black'
                 }`}
               >
-                Todos
+                {t('catalog.filter_all', 'Todos')}
               </button>
               <button
                 onClick={() => setAvailabilityFilter('in-stock')}
@@ -146,7 +152,7 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
                     : 'text-stone-700 hover:text-black'
                 }`}
               >
-                Disponibles
+                {t('catalog.filter_stock', 'Disponibles')}
               </button>
               <button
                 onClick={() => setAvailabilityFilter('coming-soon')}
@@ -156,7 +162,7 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
                     : 'text-stone-700 hover:text-black'
                 }`}
               >
-                Próximamente
+                {t('catalog.filter_coming', 'Próximamente')}
               </button>
             </div>
 
@@ -239,12 +245,12 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
                     {/* Status Badge in corner */}
                     {product.isComingSoon ? (
                       <span className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-amber-500 text-white text-[9px] sm:text-[11px] font-black px-1.5 py-0.5 sm:px-2.5 sm:py-0.5 rounded-md sm:rounded-lg shadow-xs">
-                        Próximamente
+                        {t('catalog.coming_badge', 'Próximamente')}
                       </span>
                     ) : product.featured ? (
                       <span className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-[#00795F] text-white text-[9px] sm:text-[11px] font-black px-1.5 py-0.5 sm:px-2.5 sm:py-0.5 rounded-md sm:rounded-lg flex items-center gap-1 shadow-xs">
                         <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#00A550]" />
-                        <span className="hidden xs:inline">Destacado</span>
+                        <span className="hidden xs:inline">{t('catalog.featured_badge', 'Destacado')}</span>
                       </span>
                     ) : null}
 
@@ -291,7 +297,7 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
                     {/* Price and Action Bar */}
                     <div className="mt-3 sm:mt-5 pt-2.5 sm:pt-3.5 border-t border-stone-100">
                       <div className="flex items-baseline justify-between mb-2 sm:mb-3">
-                        <span className="text-[10px] sm:text-xs text-stone-500 font-semibold">Precio</span>
+                        <span className="text-[10px] sm:text-xs text-stone-500 font-semibold">{t('catalog.price', 'Precio')}</span>
                         <span className="text-sm sm:text-xl font-black text-black tabular-nums">
                           {product.priceFormatted}
                         </span>
@@ -302,10 +308,10 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
                         <Link
                           to={productUrl}
                           className="w-full py-1.5 sm:py-2.5 px-2 text-[11px] sm:text-xs font-bold text-[#00795F] bg-emerald-50 hover:bg-emerald-100 rounded-lg sm:rounded-xl transition-all border border-emerald-200 flex items-center justify-center gap-1 active:scale-95"
-                          title="Ver Ficha Técnica"
+                          title={t('catalog.btn_details', 'Ficha')}
                         >
                           <Eye className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                          <span>Ficha</span>
+                          <span>{t('catalog.btn_details', 'Ficha')}</span>
                         </Link>
 
                         {/* WhatsApp Consultation Button with dynamic product page URL */}
@@ -320,10 +326,10 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full py-1.5 sm:py-2.5 px-2 text-[11px] sm:text-xs font-bold text-white bg-[#00A550] hover:bg-[#008f44] rounded-lg sm:rounded-xl transition-all flex items-center justify-center gap-1 shadow-2xs active:scale-95"
-                          title="Consultar por WhatsApp"
+                          title={t('catalog.btn_inquire', 'Consultar')}
                         >
                           <MessageCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                          <span>Consultar</span>
+                          <span>{t('catalog.btn_inquire', 'Consultar')}</span>
                         </a>
                       </div>
                     </div>
@@ -342,7 +348,7 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
               to="/productos"
               className="inline-flex items-center gap-2 px-8 py-4 bg-stone-900 hover:bg-black text-white text-sm font-extrabold rounded-2xl shadow-md transition-all active:scale-95"
             >
-              <span>Ver Catálogo Completo ({PRODUCTS.length} Productos)</span>
+              <span>{t('catalog.view_all', 'Ver Catálogo Completo')} ({PRODUCTS.length})</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

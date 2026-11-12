@@ -1,8 +1,11 @@
 import React from 'react';
 import { ArrowRight, Phone, Award, Sparkles, CheckCircle2 } from 'lucide-react';
 import { Link } from '../router';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Hero: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="inicio" className="relative bg-gradient-to-b from-[#00795F]/8 via-white to-stone-50 pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden border-b border-stone-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,17 +19,20 @@ export const Hero: React.FC = () => {
             {/* Quiet unboxed kicker */}
             <div className="flex items-center gap-2 text-xs font-bold text-[#00795F] uppercase tracking-wider mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#00A550]" />
-              <span>Salud · Bienestar · Prosperidad</span>
+              <span>{t('hero.badge', 'Distribuidor Independiente Autorizado en Costa Rica')}</span>
               <span aria-hidden="true" className="text-stone-300">/</span>
               <span>Costa Rica</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-black leading-[1.15] text-balance mb-5">
-              Bienestar Natural y Productos Funcionales con <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00795F] to-[#00A550]">HGW Costa Rica</span>
+              {t('hero.title_pre', 'Bienestar Natural y Productos Funcionales con')}{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00795F] to-[#00A550]">
+                {t('hero.title_brand', 'HGW Costa Rica')}
+              </span>
             </h1>
 
             <p className="text-[18px] text-stone-800 leading-relaxed max-w-2xl mb-8 font-normal">
-              Descubre la sinergia entre la sabiduría herbolaria milenaria y la tecnología moderna. Productos originales de arándano, turmalina, ganoderma lucidum y probióticos respaldados por certificaciones de clase mundial y asesoría personalizada de distribuidores independientes en Costa Rica.
+              {t('hero.subtitle', 'Descubre la línea oficial de cafés funcionales con ganoderma y arándanos, tecnología de nanoturmalina y suplementos botánicos con despacho garantizado en todo Costa Rica.')}
             </p>
 
             {/* CTAs */}
@@ -35,7 +41,7 @@ export const Hero: React.FC = () => {
                 to="/productos"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 text-sm font-black text-white bg-[#00795F] hover:bg-[#004d3c] rounded-xl shadow-md shadow-[#00795F]/20 active:scale-95 transition-all whitespace-nowrap text-center"
               >
-                <span>Ver Catálogo Completo</span>
+                <span>{t('hero.cta_catalog', 'Ver Catálogo Completo')}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
@@ -44,7 +50,7 @@ export const Hero: React.FC = () => {
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 text-sm font-bold text-[#00795F] bg-white border border-[#00795F]/40 hover:bg-[#00795F]/5 rounded-xl shadow-xs active:scale-95 transition-all whitespace-nowrap text-center"
               >
                 <Sparkles className="w-4 h-4 text-[#00A550]" />
-                <span>Oportunidad de Negocio</span>
+                <span>{t('nav.business', 'Oportunidad de Negocio')}</span>
               </Link>
             </div>
 
@@ -52,11 +58,11 @@ export const Hero: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[17px] text-black w-full pt-4 border-t border-stone-200">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-[#00A550] shrink-0" />
-                <span className="font-medium">Productos 100% auténticos con registro FDA e ISO</span>
+                <span className="font-medium">{t('hero.guarantee_1', '100% Originales')} (FDA & ISO)</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-[#00A550] shrink-0" />
-                <span className="font-medium">Membresías con hasta 52% de beneficio comercial</span>
+                <span className="font-medium">{t('hero.guarantee_2', 'Entrega en Provincias')}</span>
               </div>
             </div>
 
@@ -83,7 +89,7 @@ export const Hero: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-5">
                     <div className="text-white">
-                      <p className="text-xs font-bold text-emerald-300 uppercase tracking-wider">Línea Oficial Costa Rica</p>
+                      <p className="text-xs font-bold text-emerald-300 uppercase tracking-wider">HGW Costa Rica</p>
                       <p className="text-[18px] sm:text-[20px] font-black">Arándano · Ganoderma · Turmalina</p>
                     </div>
                   </div>
@@ -93,11 +99,11 @@ export const Hero: React.FC = () => {
                 <div className="mt-4 grid grid-cols-2 gap-3 pt-2">
                   <div className="p-3 bg-stone-50 rounded-xl border border-stone-100">
                     <p className="text-xs text-stone-600 font-medium">Moneda oficial</p>
-                    <p className="text-sm sm:text-base font-black text-black">Precios en USD ($)</p>
+                    <p className="text-sm sm:text-base font-black text-black">Colones (CRC ₡)</p>
                   </div>
                   <div className="p-3 bg-stone-50 rounded-xl border border-stone-100">
                     <p className="text-xs text-stone-600 font-medium">Distribución</p>
-                    <p className="text-sm sm:text-base font-black text-[#00795F]">Envíos en Costa Rica</p>
+                    <p className="text-sm sm:text-base font-black text-[#00795F]">Costa Rica</p>
                   </div>
                 </div>
               </div>

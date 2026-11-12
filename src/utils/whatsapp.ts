@@ -6,7 +6,7 @@ export const CORPORATE_OFFICE_PHONE = "+506 7185-5885";
  * linking to the exact page URL where the visitor is:
  * «¡Hola! Estaba visitando tu tienda online (URL) y quería preguntar sobre cómo afiliarse a HGW Costa Rica. Mi nombre es:»
  */
-export const getAffiliationWhatsAppUrl = (customUrl?: string): string => {
+export const getAffiliationWhatsAppUrl = (customUrl?: string, lang: 'es' | 'en' = 'es'): string => {
   let pageUrl = customUrl;
   if (!pageUrl && typeof window !== 'undefined') {
     pageUrl = window.location.href;
@@ -15,7 +15,10 @@ export const getAffiliationWhatsAppUrl = (customUrl?: string): string => {
     pageUrl = 'https://hgwcostarica.com';
   }
 
-  const message = `¡Hola! Estaba visitando tu tienda online (${pageUrl}) y quería preguntar sobre cómo afiliarse a HGW Costa Rica. Mi nombre es:`;
+  const message = lang === 'en'
+    ? `Hello! I was visiting your online store (${pageUrl}) and would like to ask about joining HGW Costa Rica. My name is:`
+    : `¡Hola! Estaba visitando tu tienda online (${pageUrl}) y quería preguntar sobre cómo afiliarse a HGW Costa Rica. Mi nombre es:`;
+
   return `https://wa.me/${DISTRIBUTOR_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 };
 
@@ -27,7 +30,8 @@ export const getAffiliationWhatsAppUrl = (customUrl?: string): string => {
 export const getProductWhatsAppUrl = (
   productName: string,
   priceFormatted?: string,
-  customUrl?: string
+  customUrl?: string,
+  lang: 'es' | 'en' = 'es'
 ): string => {
   let pageUrl = customUrl;
   if (!pageUrl && typeof window !== 'undefined') {
@@ -38,7 +42,10 @@ export const getProductWhatsAppUrl = (
   }
 
   const priceText = priceFormatted ? ` (${priceFormatted})` : '';
-  const message = `¡Hola! Estaba visitando tu tienda online (${pageUrl}) y quería consultar o adquirir el producto "${productName}"${priceText}. Mi nombre es:`;
+  const message = lang === 'en'
+    ? `Hello! I was visiting your online store (${pageUrl}) and would like to ask about or order "${productName}"${priceText}. My name is:`
+    : `¡Hola! Estaba visitando tu tienda online (${pageUrl}) y quería consultar o adquirir el producto "${productName}"${priceText}. Mi nombre es:`;
+
   return `https://wa.me/${DISTRIBUTOR_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 };
 
