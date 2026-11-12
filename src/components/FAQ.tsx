@@ -16,11 +16,11 @@ export const FAQ: React.FC = () => {
     },
     {
       question: "¿Cuáles son los métodos de pago disponibles?",
-      answer: "Aceptamos pagos mediante Yappy (Banco General), transferencias bancarias ACH y pago en efectivo contraentrega en áreas seleccionadas de Ciudad de Costa Rica y Costa Rica Oeste."
+      answer: "Aceptamos pagos mediante SINPE Móvil, transferencias bancarias (BAC Credomatic, Banco Nacional y Banco de Costa Rica) y pago en efectivo contraentrega en el Gran Área Metropolitana (GAM / San José)."
     },
     {
       question: "¿Realizan entregas al interior del país?",
-      answer: "Sí, coordinamos envíos a todas las provincias de Costa Rica (Chiriquí, Colón, Veraguas, Herrera, Los Santos, Coclé, Bocas del Toro, Darién) a través de servicios de encomienda confiables como Uno Express, Fletes Chavale o Ferguson."
+      answer: "Sí, coordinamos envíos a todas las provincias de Costa Rica (San José, Alajuela, Cartago, Heredia, Guanacaste, Puntarenas y Limón) a través de Correos de Costa Rica y servicios de encomienda autorizados."
     },
     {
       question: "¿Estos productos son medicamentos?",

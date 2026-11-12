@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Eye, Sparkles, Filter, ArrowRight } from 'lucide-react';
+import { Search, Eye, Sparkles, Filter, ArrowRight, MessageCircle } from 'lucide-react';
 import { Product, PRODUCTS } from '../data/products';
 import { Link } from '../router';
+import { getProductWhatsAppUrl } from '../utils/whatsapp';
 
 interface CatalogProps {
   isHomeView?: boolean;
@@ -210,11 +211,10 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {displayedProducts.map((product) => {
               const productUrl = `/producto/${product.slug}`;
-              const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwcostarica.com/productos';
-              const whatsappOrderText = encodeURIComponent(
-                `¡Hola! Estaba visitando tu tienda online (${currentUrl}) y quería consultar o adquirir el producto "${product.name}" (${product.priceFormatted}). Mi nombre es:`
-              );
-              const whatsappLink = `https://wa.me/50767788375?text=${whatsappOrderText}`;
+              const fullProductUrl = typeof window !== 'undefined'
+                ? `${window.location.origin}/producto/${product.slug}`
+                : `https://hgwcostarica.com/producto/${product.slug}`;
+              const whatsappLink = getProductWhatsAppUrl(product.name, product.priceFormatted, fullProductUrl);
 
               return (
                 <div
@@ -297,15 +297,34 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
                         </span>
                       </div>
 
-                      <div className="grid grid-cols-1 gap-1.5 sm:gap-2">
-                        {/* Ver Ficha (Navigates to friendly URL page) */}
+                      <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
+                        {/* Ver Ficha (Navigates to product detail page) */}
                         <Link
                           to={productUrl}
-                          className="w-full py-1.5 sm:py-2.5 px-2 sm:px-3 text-[11px] sm:text-xs font-bold text-white bg-[#00795F] hover:bg-[#004d3c] rounded-lg sm:rounded-xl transition-all hover:shadow-xs active:scale-95 flex items-center justify-center gap-1"
+                          className="w-full py-1.5 sm:py-2.5 px-2 text-[11px] sm:text-xs font-bold text-[#00795F] bg-emerald-50 hover:bg-emerald-100 rounded-lg sm:rounded-xl transition-all border border-emerald-200 flex items-center justify-center gap-1 active:scale-95"
+                          title="Ver Ficha Técnica"
                         >
                           <Eye className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                          <span>Ver Ficha y Consultar</span>
+                          <span>Ficha</span>
                         </Link>
+
+                        {/* WhatsApp Consultation Button with dynamic product page URL */}
+                        <a
+                          href={whatsappLink}
+                          onClick={(e) => {
+                            if (typeof window !== 'undefined') {
+                              const dynamicFullUrl = `${window.location.origin}/producto/${product.slug}`;
+                              e.currentTarget.href = getProductWhatsAppUrl(product.name, product.priceFormatted, dynamicFullUrl);
+                            }
+                          }}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full py-1.5 sm:py-2.5 px-2 text-[11px] sm:text-xs font-bold text-white bg-[#00A550] hover:bg-[#008f44] rounded-lg sm:rounded-xl transition-all flex items-center justify-center gap-1 shadow-2xs active:scale-95"
+                          title="Consultar por WhatsApp"
+                        >
+                          <MessageCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                          <span>Consultar</span>
+                        </a>
                       </div>
                     </div>
 

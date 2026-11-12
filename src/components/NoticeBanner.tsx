@@ -14,7 +14,7 @@ export const NoticeBanner: React.FC = () => {
         <div className="text-[11px] text-emerald-100 flex items-center gap-1.5 justify-center md:justify-end">
           <PhoneCall className="w-3.5 h-3.5 text-emerald-300 shrink-0" />
           <span>
-            ¿Ya eres socio registrado? Contacta a tu patrocinador o a oficinas principales: <strong className="text-white font-bold">+507 392-8415</strong>
+            ¿Ya eres socio registrado? Contacta a tu patrocinador o a oficinas principales: <strong className="text-white font-bold">+506 7185-5885</strong>
           </span>
         </div>
       </div>

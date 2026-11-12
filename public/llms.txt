@@ -1,23 +1,22 @@
-# HGW Panamá
+# HGW Costa Rica
 
-> Sitio de distribuidores independientes de Health Green World (HGW) en Panamá. Ofrece el catálogo de productos con precios oficiales, planes de membresía, información sobre la oportunidad de negocio, pre-registro y documentos PDF oficiales. No es el sitio corporativo de HGW.
+> Sitio de distribuidores independientes de Health Green World (HGW) en Costa Rica. Ofrece el catálogo de productos con precios oficiales en colones (CRC), planes de membresía, información sobre la oportunidad de negocio, pre-registro y documentos PDF oficiales. No es el sitio corporativo de HGW.
 
 ## Páginas principales
 
-- [Inicio](https://www.hgwpanama.com/): Presentación del sitio y accesos principales.
-- [Productos](https://www.hgwpanama.com/productos): Catálogo de 56 productos con precios, presentación y ficha técnica.
-- [Membresías](https://www.hgwpanama.com/membresias): Planes de afiliación Pre-Junior, Junior, Senior y Master.
-- [Oportunidad de negocio](https://www.hgwpanama.com/oportunidad-de-negocio): Plan de compensación para distribuidores independientes.
-- [Pre-registro](https://www.hgwpanama.com/preregistro): Información y pasos para afiliarse en Panamá.
+- [Inicio](https://www.hgwcostarica.com/): Presentación del sitio y accesos principales.
+- [Productos](https://www.hgwcostarica.com/productos): Catálogo oficial de 26 productos (31 variantes) con precios en colones, ingredientes naturales y ficha técnica.
+- [Membresías](https://www.hgwcostarica.com/membresias): Planes de afiliación Pre-Junior, Junior, Senior y Master con valores en colones.
+- [Oportunidad de negocio](https://www.hgwcostarica.com/negocio): Plan de compensación y ganancias para distribuidores independientes.
+- [Pre-registro](https://www.hgwcostarica.com/preregistro): Formulario para afiliarse con el patrocinio autorizado en Costa Rica.
 
 ## Documentos y contacto
 
-- [Documentos PDF](https://www.hgwpanama.com/documentos): Biblioteca de catálogos, listado de precios y fichas técnicas oficiales.
-- [Catálogo oficial 2026](https://www.hgwpanama.com/documentos/catalogo-productos-hgw-panama-2026): Catálogo completo de productos para Panamá.
-- [Listado de precios 2026](https://www.hgwpanama.com/documentos/listado-de-precios-hgw-panama-2026): Precios oficiales en Panamá.
-- [Directorio de oficinas](https://www.hgwpanama.com/oficinas): Oficinas y datos de contacto.
-- [Contacto](https://www.hgwpanama.com/contacto): Formas de comunicarse y preguntas frecuentes.
+- [Documentos PDF](https://www.hgwcostarica.com/documentos): Biblioteca técnica de fichas oficiales.
+- [Directorio de oficinas](https://www.hgwcostarica.com/oficinas): Oficinas corporativas en Costa Rica y red internacional de LATAM.
+- [Contacto](https://www.hgwcostarica.com/contacto): Atención por WhatsApp al distribuidor independiente (+507 6778-8375) y preguntas frecuentes.
 
 ## Opcional
 
-- [Mapa del sitio](https://www.hgwpanama.com/sitemap.xml): Lista de todas las páginas del sitio.
+- [Mapa del sitio](https://www.hgwcostarica.com/sitemap.xml): Lista completa de todas las páginas del sitio.
+

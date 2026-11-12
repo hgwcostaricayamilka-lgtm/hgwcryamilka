@@ -58,7 +58,7 @@ export const ContactSection: React.FC = () => {
                 El número de WhatsApp <strong className="text-black">+507 6778-8375</strong> corresponde a un <strong>Distribuidor Independiente</strong> para atender consultas comerciales, pedidos y nuevos afiliados. <em>No es un número oficial corporativo de la empresa HGW.</em>
               </p>
               <div className="pt-2 border-t border-amber-200 text-stone-900">
-                <strong className="text-black">¿Ya eres socio registrado de HGW?</strong> Si ya cuentas con un código de socio en HGW, debes comunicarte directamente con tu <strong>patrocinador</strong> o llamar al teléfono oficial de las oficinas principales: <strong className="text-[#00795F] font-extrabold">+507 392-8415</strong> para asistencia sobre tus órdenes o trámites corporativos.
+                <strong className="text-black">¿Ya eres socio registrado de HGW?</strong> Si ya cuentas con un código de socio en HGW, debes comunicarte directamente con tu <strong>patrocinador</strong> o llamar al teléfono oficial de las oficinas principales: <strong className="text-[#00795F] font-extrabold">+506 7185-5885</strong> para asistencia sobre tus órdenes o trámites corporativos.
               </div>
             </div>
 
@@ -72,13 +72,13 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <h3 className="text-xs font-bold text-stone-500 uppercase tracking-wider">Oficinas Principales en Costa Rica</h3>
                   <p className="text-sm sm:text-base font-bold text-black mt-0.5 leading-snug">
-                    Avenida Porras, Plaza Royal Blue, Local No. 6
+                    San José El Carmen, Avenida 5 Calle 1
                   </p>
                   <p className="text-xs text-stone-600 mt-1">
-                    Provincia de Costa Rica, Corregimiento de San Francisco.
+                    San José, Costa Rica.
                   </p>
                   <p className="text-xs font-bold text-[#00795F] mt-1.5 flex items-center gap-2">
-                    <span>Teléfono Oficina Principal: <strong>+507 392-8415</strong></span>
+                    <span>Teléfono Oficina Principal: <strong>+506 7185-5885</strong></span>
                   </p>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export const ContactSection: React.FC = () => {
                     Sábados: 09:00 am a 01:00 pm<br />
                     <span className="text-stone-500 font-normal">Domingos y Festivos: Cerrado</span>
                   </p>
-                  <p className="text-xs text-[#00795F] font-bold mt-1">Envíos a todo el país vía Servientrega</p>
+                  <p className="text-xs text-[#00795F] font-bold mt-1">Envíos a todo el país vía Correos de Costa Rica y encomiendas</p>
                 </div>
               </div>
 

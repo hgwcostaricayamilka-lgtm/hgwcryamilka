@@ -211,17 +211,14 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                         onChange={(e) => setLocation(e.target.value)}
                         className="w-full px-3 py-2 text-xs bg-white border border-stone-200 rounded-xl text-stone-900 focus:outline-none focus:border-[#00795F]"
                       >
-                        <option value="Costa Rica Centro">Costa Rica Centro / San Francisco / Bella Vista</option>
-                        <option value="San Miguelito">San Miguelito</option>
-                        <option value="Costa Rica Oeste">Costa Rica Oeste (La Chorrera / Arraiján)</option>
-                        <option value="Colón">Colón</option>
-                        <option value="Chiriquí (David)">Chiriquí (David / Boquete)</option>
-                        <option value="Veraguas (Santiago)">Veraguas (Santiago)</option>
-                        <option value="Herrera (Chitré)">Herrera (Chitré)</option>
-                        <option value="Los Santos">Los Santos (Las Tablas)</option>
-                        <option value="Coclé (Penonomé)">Coclé (Penonomé / Aguadulce)</option>
-                        <option value="Bocas del Toro">Bocas del Toro</option>
-                        <option value="Interior / Otro">Otro sector del interior</option>
+                        <option value="San José">San José (GAM / Cantones Centrales)</option>
+                        <option value="Alajuela">Alajuela (Centro, San Carlos, Grecia)</option>
+                        <option value="Cartago">Cartago (Centro, Paraíso, La Unión)</option>
+                        <option value="Heredia">Heredia (Centro, San Rafael, Belén)</option>
+                        <option value="Guanacaste">Guanacaste (Liberia, Nicoya, Santa Cruz)</option>
+                        <option value="Puntarenas">Puntarenas (Central, Jacó, Quepos)</option>
+                        <option value="Limón">Limón (Centro, Pococí, Guácimo)</option>
+                        <option value="Retiro en Oficina">Retiro en Sede Central (San José El Carmen)</option>
                       </select>
                     </div>
 
@@ -265,7 +262,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               </button>
 
               <p className="text-[10px] text-stone-400 text-center leading-tight">
-                ¿Ya eres socio registrado de HGW? Gestiona tus órdenes internas con tu patrocinador o a oficinas principales (+507 392-8415).
+                ¿Ya eres socio registrado de HGW? Gestiona tus órdenes internas con tu patrocinador o a oficinas principales (+506 7185-5885).
               </p>
             </div>
           )}

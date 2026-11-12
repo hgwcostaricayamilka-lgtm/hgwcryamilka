@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FileText, Download, Eye, ShieldCheck, ArrowLeft, ArrowRight, Share2, Sparkles, Check } from 'lucide-react';
+import { FileText, Download, Eye, ShieldCheck, ArrowLeft, ArrowRight, Share2, Sparkles, Check, MessageCircle } from 'lucide-react';
 import { HGW_DOCUMENTS } from '../data/documents';
 import { Link } from '../router';
 
@@ -128,6 +128,25 @@ export const DocumentDetailPage: React.FC<DocumentDetailPageProps> = ({ id }) =>
               >
                 <Download className="w-4 h-4" />
                 <span>DESCARGAR PDF</span>
+              </a>
+
+              <a
+                href={`https://wa.me/50767788375?text=${encodeURIComponent(
+                  `¡Hola! Estaba revisando el documento oficial "${doc.title}" y quería consultar con el distribuidor independiente. Mi nombre es:`
+                )}`}
+                onClick={(e) => {
+                  if (typeof window !== 'undefined') {
+                    e.currentTarget.href = `https://wa.me/50767788375?text=${encodeURIComponent(
+                      `¡Hola! Estaba revisando el documento oficial "${doc.title}" en (${window.location.href}) y quería consultar con el distribuidor independiente. Mi nombre es:`
+                    )}`;
+                  }
+                }}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2.5 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-[#00795F] font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-2 text-center"
+              >
+                <MessageCircle className="w-4 h-4 text-[#00A550]" />
+                <span>Consultar por WhatsApp</span>
               </a>
 
               <button

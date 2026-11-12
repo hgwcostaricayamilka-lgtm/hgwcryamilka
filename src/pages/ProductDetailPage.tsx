@@ -16,7 +16,7 @@ import {
   Award,
   ChevronRight
 } from 'lucide-react';
-import { getAffiliationWhatsAppUrl } from '../utils/whatsapp';
+import { getProductWhatsAppUrl } from '../utils/whatsapp';
 
 interface ProductDetailPageProps {
   slug: string;
@@ -41,8 +41,24 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
   }
 
   const [activeTab, setActiveTab] = useState<'benefits' | 'ingredients' | 'usage'>('benefits');
-  const whatsappUrl = getAffiliationWhatsAppUrl(product.name);
+  const [whatsappHref, setWhatsappHref] = useState(() => 
+    getProductWhatsAppUrl(product.name, product.priceFormatted)
+  );
   const registrationUrl = "https://www.healthgreenworld.com/?userName=Yamilka507";
+
+  // Dynamically update WhatsApp URL with current page URL just like the floating button
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWhatsappHref(getProductWhatsAppUrl(product.name, product.priceFormatted, window.location.href));
+    }
+  }, [product.name, product.priceFormatted]);
+
+  const handleOpenWhatsApp = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (typeof window !== 'undefined') {
+      const freshUrl = getProductWhatsAppUrl(product.name, product.priceFormatted, window.location.href);
+      e.currentTarget.href = freshUrl;
+    }
+  };
 
   return (
     <div className="py-6 sm:py-12 bg-white min-h-screen">
@@ -207,7 +223,8 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
 
               {/* Primary WhatsApp Action */}
               <a 
-                href={whatsappUrl} 
+                href={whatsappHref} 
+                onClick={handleOpenWhatsApp}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full py-4 px-6 bg-[#00795F] hover:bg-[#004d3c] text-white font-black text-base sm:text-lg rounded-2xl shadow-lg shadow-[#00795F]/20 flex items-center justify-center gap-3 transition-all active:scale-95 uppercase tracking-wider"

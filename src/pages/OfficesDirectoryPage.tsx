@@ -24,6 +24,16 @@ const OFFICES: Office[] = [
     hours: "Lun - Vie: 09:00 am a 17:30 pm | Sáb: 10:00 am a 14:00 pm | Dom: Cerrado",
     isMain: true
   },
+  // --- PANAMÁ ---
+  {
+    country: "Panamá",
+    city: "Ciudad de Panamá",
+    name: "Sede Corporativa Panamá",
+    address: "Avenida Porras, Plaza Royal Blue, Local No. 6, San Francisco.",
+    phone: "+507 392 8415",
+    hours: "Lun - Vie: 09:00 am a 18:00 pm | Sáb: 09:00 am a 13:00 pm | Dom: Cerrado",
+    isMain: true
+  },
   // --- PERÚ ---
   {
     country: "Perú",

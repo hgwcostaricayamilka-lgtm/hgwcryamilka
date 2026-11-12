@@ -668,7 +668,7 @@ export const BusinessOpportunityPage: React.FC = () => {
                       type="text"
                       value={district}
                       onChange={(e) => setDistrict(e.target.value)}
-                      placeholder="Ej. San Francisco / Betania / David"
+                      placeholder="Ej. Carmen / Escazú / Curridabat / San Rafael"
                       className="w-full px-4 py-3 text-sm bg-white border border-stone-300 rounded-xl text-black placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#00795F]/30 focus:border-[#00795F] font-medium"
                     />
                   </div>
