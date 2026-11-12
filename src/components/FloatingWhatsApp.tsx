@@ -2,26 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { MessageCircle, X, ShieldAlert, Phone, HelpCircle } from 'lucide-react';
 import { getAffiliationWhatsAppUrl, CORPORATE_OFFICE_PHONE } from '../utils/whatsapp';
 import { useRouter } from '../router';
-import { useLanguage } from '../context/LanguageContext';
 
 export const FloatingWhatsApp: React.FC = () => {
   const [showCard, setShowCard] = useState(false);
   const [showBadge, setShowBadge] = useState(true);
   const { currentPath } = useRouter();
-  const { language, t } = useLanguage();
-  const [whatsappHref, setWhatsappHref] = useState(() => getAffiliationWhatsAppUrl(undefined, language));
+  const [whatsappHref, setWhatsappHref] = useState(() => getAffiliationWhatsAppUrl());
 
-  // Dynamically recalculate WhatsApp URL whenever the visitor navigates to another page or changes language
+  // Dynamically recalculate WhatsApp URL whenever the visitor navigates to another page
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setWhatsappHref(getAffiliationWhatsAppUrl(window.location.href, language));
+      setWhatsappHref(getAffiliationWhatsAppUrl(window.location.href));
     }
-  }, [currentPath, language]);
+  }, [currentPath]);
 
   const handleOpenWhatsApp = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // Ensure the very latest URL is computed right at the moment of click
     if (typeof window !== 'undefined') {
-      const freshUrl = getAffiliationWhatsAppUrl(window.location.href, language);
+      const freshUrl = getAffiliationWhatsAppUrl(window.location.href);
       e.currentTarget.href = freshUrl;
     }
   };
@@ -31,10 +29,10 @@ export const FloatingWhatsApp: React.FC = () => {
       
       {/* Detailed Distributor vs Corporate Assistance Card */}
       {showCard && (
-        <div className="mb-3 w-80 sm:w-96 bg-white text-stone-900 rounded-2xl shadow-2xl border border-stone-200 p-4 animate-fade-in text-xs space-y-3 relative">
+        <div className="mb-3 w-80 sm:w-96 bg-white text-stone-900 rounded-2xl shadow-2xl border border-stone-200 p-5 animate-fade-in text-xs sm:text-sm space-y-3 relative">
           <button
             onClick={() => setShowCard(false)}
-            className="absolute top-3 right-3 text-stone-400 hover:text-black p-1 rounded-md hover:bg-stone-100 transition-colors"
+            className="absolute top-3 right-3 text-stone-400 hover:text-black p-1.5 rounded-md hover:bg-stone-100 transition-colors"
             aria-label="Cerrar ventana"
           >
             <X className="w-4 h-4" />
@@ -42,27 +40,27 @@ export const FloatingWhatsApp: React.FC = () => {
 
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#00A550] animate-pulse" />
-            <h4 className="font-extrabold text-sm text-black">
-              {t('float.title', 'WhatsApp Distribuidor Independiente')}
+            <h4 className="font-extrabold text-sm sm:text-base text-black">
+              WhatsApp Distribuidor Independiente
             </h4>
           </div>
 
-          <div className="p-2.5 bg-emerald-50/70 border border-emerald-200 rounded-xl space-y-1">
-            <p className="font-bold text-[#00795F]">
-              {language === 'en' ? 'Support for new customers and prospects:' : 'Atención a nuevos clientes y prospectos:'}
+          <div className="p-3 bg-emerald-50/70 border border-emerald-200 rounded-xl space-y-1">
+            <p className="font-bold text-[#00795F] text-xs sm:text-sm">
+              Atención a nuevos clientes y prospectos:
             </p>
-            <p className="text-stone-700 leading-relaxed text-[11px]">
-              {t('float.desc', 'Este número (+507 6778-8375) es atendido por un Distribuidor Independiente para consultas sobre productos, compras y afiliaciones.')}
+            <p className="text-stone-700 leading-relaxed text-xs sm:text-sm">
+              Este número (+507 6778-8375) es atendido por un <strong>Distribuidor Independiente</strong> para consultas sobre productos, compras y afiliaciones. <em>No es una línea oficial ni corporativa de la empresa HGW.</em>
             </p>
           </div>
 
-          <div className="p-2.5 bg-amber-50 border border-amber-200/90 rounded-xl space-y-1">
-            <div className="flex items-center gap-1.5 font-extrabold text-amber-900">
-              <ShieldAlert className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-              <span>{t('float.partner_alert', '¿Ya eres socio registrado de HGW?')}</span>
+          <div className="p-3 bg-amber-50 border border-amber-200/90 rounded-xl space-y-1">
+            <div className="flex items-center gap-1.5 font-extrabold text-amber-900 text-xs sm:text-sm">
+              <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0" />
+              <span>¿Ya eres socio registrado de HGW?</span>
             </div>
-            <p className="text-stone-700 leading-relaxed text-[11px]">
-              {t('float.partner_text', 'Si ya te encuentras afiliado en HGW, debes comunicarte directamente con tu patrocinador o llamar a oficinas principales: +506 7185-5885.')}
+            <p className="text-stone-700 leading-relaxed text-xs sm:text-sm">
+              Si ya te encuentras afiliado en HGW, debes comunicarte directamente con tu <strong>patrocinador</strong> o llamar al teléfono de oficinas principales: <strong className="text-black">{CORPORATE_OFFICE_PHONE}</strong>.
             </p>
           </div>
 
@@ -72,10 +70,10 @@ export const FloatingWhatsApp: React.FC = () => {
               onClick={handleOpenWhatsApp}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-2.5 px-3 bg-[#00A550] hover:bg-[#008f44] text-white font-extrabold text-xs rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all text-center"
+              className="w-full py-3 px-4 bg-[#00A550] hover:bg-[#008f44] text-white font-extrabold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all text-center uppercase tracking-wider"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>{t('float.btn_chat', 'Chatear con el Distribuidor')}</span>
+              <span>Chatear con el Distribuidor</span>
             </a>
           </div>
         </div>
@@ -83,30 +81,30 @@ export const FloatingWhatsApp: React.FC = () => {
 
       {/* Floating prompt tooltip if card is closed */}
       {!showCard && showBadge && (
-        <div className="mb-2 bg-white text-stone-800 text-xs py-2 px-3.5 rounded-2xl shadow-xl border border-stone-200 flex items-center gap-2 animate-fade-in max-w-xs">
-          <div className="text-[11px] leading-tight">
-            <span className="font-bold text-black block">{t('float.tooltip_title', 'WhatsApp Distribuidor:')}</span>
-            <span className="text-stone-600">{t('float.tooltip_sub', '¿Deseas información sobre afiliación o pedidos?')}</span>
+        <div className="mb-2 bg-white text-stone-800 text-xs sm:text-sm py-2.5 px-4 rounded-2xl shadow-xl border border-stone-200 flex items-center gap-2.5 animate-fade-in max-w-xs">
+          <div className="leading-tight">
+            <span className="font-bold text-black block text-xs sm:text-sm">WhatsApp Distribuidor:</span>
+            <span className="text-stone-600 text-xs">¿Deseas información sobre afiliación o pedidos?</span>
           </div>
           <button
             onClick={() => setShowBadge(false)}
-            className="text-stone-400 hover:text-stone-700 p-0.5"
+            className="text-stone-400 hover:text-stone-700 p-1"
             aria-label="Cerrar sugerencia"
           >
-            <X className="w-3.5 h-3.5" />
+            <X className="w-4 h-4" />
           </button>
         </div>
       )}
 
       {/* Floating Action Button */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2.5">
         <button
           onClick={() => setShowCard(!showCard)}
           aria-label="Ver información sobre el número de contacto"
-          className="w-8 h-8 rounded-full bg-white text-stone-700 hover:text-black border border-stone-300 shadow-md flex items-center justify-center text-xs font-bold hover:scale-105 transition-transform"
+          className="w-9 h-9 rounded-full bg-white text-stone-700 hover:text-black border border-stone-300 shadow-md flex items-center justify-center font-bold hover:scale-105 transition-transform"
           title="Aviso de atención y soporte a socios"
         >
-          <HelpCircle className="w-4 h-4 text-[#00795F]" />
+          <HelpCircle className="w-5 h-5 text-[#00795F]" />
         </button>
 
         <a

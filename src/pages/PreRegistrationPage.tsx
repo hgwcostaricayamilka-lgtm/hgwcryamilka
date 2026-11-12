@@ -96,35 +96,35 @@ export const PreRegistrationPage: React.FC = () => {
           {/* Legend removed as requested */}
         </div>
 
-        {/* Official Portal Link Callout (Neutral) */}
+        {/* Tutorial Video */}
+        <div className="mb-6">
+           <h2 className="text-2xl font-black text-black mb-4">Tutorial: Cómo registrarte y activar tu cuenta HGW</h2>
+           <iframe
+              className="w-full aspect-video rounded-3xl shadow-md"
+              src="https://www.youtube.com/embed/Poy4FvvfcfA"
+              title="Tutorial: Cómo registrarte y activar tu cuenta HGW"
+              allowFullScreen
+            ></iframe>
+        </div>
+
+        {/* Official Portal Link Callout (Neutral) - Positioned below video as requested */}
         <div className="bg-[#00795F] text-white rounded-3xl p-6 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
           <div className="flex items-center gap-3">
             <Sparkles className="w-6 h-6 text-emerald-300 shrink-0" />
             <div className="text-center sm:text-left">
-              <h3 className="font-black text-lg">¿Deseas registrarte directamente?</h3>
-              <p className="text-emerald-100 text-xs sm:text-sm">Accede al portal corporativo internacional oficial de HGW.</p>
+              <h3 className="font-black text-lg sm:text-xl">¿Deseas registrarte directamente?</h3>
+              <p className="text-emerald-100 text-sm sm:text-base">Accede al portal corporativo internacional oficial de HGW.</p>
             </div>
           </div>
           <a
             href="https://www.healthgreenworld.com/?userName=Yamilka507"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#00795F] font-black text-sm rounded-xl shadow-sm hover:bg-stone-50 transition-all active:scale-95 whitespace-nowrap"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#00795F] font-black text-sm sm:text-base rounded-xl shadow-sm hover:bg-stone-50 transition-all active:scale-95 whitespace-nowrap"
           >
             <span>Portal Oficial HGW</span>
-            <ExternalLink className="w-4 h-4" />
+            <ExternalLink className="w-5 h-5" />
           </a>
-        </div>
-        
-        {/* Tutorial Video */}
-        <div className="mb-8">
-           <h2 className="text-2xl font-black text-black mb-4">Tutorial: Cómo registrarte y activar tu cuenta HGW</h2>
-           <iframe
-              className="w-full aspect-video rounded-3xl"
-              src="https://www.youtube.com/embed/Poy4FvvfcfA"
-              title="Tutorial: Cómo registrarte y activar tu cuenta HGW"
-              allowFullScreen
-            ></iframe>
         </div>
 
 

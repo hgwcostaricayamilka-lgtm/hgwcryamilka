@@ -17,14 +17,13 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { getProductWhatsAppUrl } from '../utils/whatsapp';
-import { useLanguage } from '../context/LanguageContext';
 
 interface ProductDetailPageProps {
   slug: string;
 }
 
 export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) => {
-  const { language, t } = useLanguage();
+  const t = (key: string, fallback?: string) => fallback || key;
   const product = PRODUCTS.find((p) => p.slug === slug || p.id === slug || p.code === slug);
 
   if (!product) {
@@ -44,20 +43,20 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
 
   const [activeTab, setActiveTab] = useState<'benefits' | 'ingredients' | 'usage'>('benefits');
   const [whatsappHref, setWhatsappHref] = useState(() => 
-    getProductWhatsAppUrl(product.name, product.priceFormatted, undefined, language)
+    getProductWhatsAppUrl(product.name, product.priceFormatted)
   );
   const registrationUrl = "https://www.healthgreenworld.com/?userName=Yamilka507";
 
-  // Dynamically update WhatsApp URL with current page URL and language
+  // Dynamically update WhatsApp URL with current page URL
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
-      setWhatsappHref(getProductWhatsAppUrl(product.name, product.priceFormatted, window.location.href, language));
+      setWhatsappHref(getProductWhatsAppUrl(product.name, product.priceFormatted, window.location.href));
     }
-  }, [product.name, product.priceFormatted, language]);
+  }, [product.name, product.priceFormatted]);
 
   const handleOpenWhatsApp = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (typeof window !== 'undefined') {
-      const freshUrl = getProductWhatsAppUrl(product.name, product.priceFormatted, window.location.href, language);
+      const freshUrl = getProductWhatsAppUrl(product.name, product.priceFormatted, window.location.href);
       e.currentTarget.href = freshUrl;
     }
   };

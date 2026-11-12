@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Link, useRouter } from '../router';
 import { getAffiliationWhatsAppUrl } from '../utils/whatsapp';
-import { useLanguage } from '../context/LanguageContext';
-import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface NavbarProps {}
 
@@ -12,7 +10,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
   const [contactDropdownOpen, setContactDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { currentPath } = useRouter();
-  const { t } = useLanguage();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -26,17 +23,17 @@ export const Navbar: React.FC<NavbarProps> = () => {
   }, []);
 
   const mainLinks = [
-    { label: t('nav.home', 'Inicio'), href: '/' },
-    { label: t('nav.products', 'Productos'), href: '/productos' },
-    { label: t('nav.memberships', 'Membresías'), href: '/membresias' },
-    { label: t('nav.business', 'Oportunidad de Negocio'), href: '/oportunidad-de-negocio' },
-    { label: t('nav.preregister', 'Pre-registro'), href: '/preregistro' },
-    { label: t('nav.documents', 'Documentos PDF'), href: '/documentos' },
+    { label: 'Inicio', href: '/' },
+    { label: 'Productos', href: '/productos' },
+    { label: 'Membresías', href: '/membresias' },
+    { label: 'Oportunidad de Negocio', href: '/oportunidad-de-negocio' },
+    { label: 'Pre-registro', href: '/preregistro' },
+    { label: 'Documentos PDF', href: '/documentos' },
   ];
 
   const contactLinks = [
-    { label: t('nav.contact_shipping', 'Contacto y Envíos'), href: '/contacto' },
-    { label: t('nav.offices', 'Oficinas HGW LATAM'), href: '/oficinas' },
+    { label: 'Contacto y Envíos', href: '/contacto' },
+    { label: 'Oficinas HGW LATAM', href: '/oficinas' },
   ];
 
   return (
@@ -58,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </Link>
 
           {/* Zone 2: Navigation links with Contact Dropdown */}
-          <nav className="hidden lg:flex items-center gap-7 text-[15px] font-bold text-black">
+          <nav className="hidden lg:flex items-center gap-7 text-base font-bold text-black">
             {mainLinks.map((link) => {
               const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
               return (
@@ -86,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     : 'text-stone-900 hover:text-[#00795F]'
                 }`}
               >
-                <span>{t('nav.contact', 'Contacto')}</span>
+                <span>Contacto</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${contactDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -97,7 +94,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                       key={sublink.href}
                       to={sublink.href}
                       onClick={() => setContactDropdownOpen(false)}
-                      className={`block px-5 py-2.5 text-sm transition-colors ${
+                      className={`block px-5 py-2.5 text-sm font-semibold transition-colors ${
                         currentPath === sublink.href
                           ? 'bg-emerald-50 text-[#00795F]'
                           : 'text-stone-700 hover:bg-stone-50 hover:text-[#00795F]'
@@ -111,24 +108,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
             </div>
           </nav>
 
-          {/* Zone 3: Language Switcher, Direct WhatsApp Phone & Menu Trigger */}
+          {/* Zone 3: Menu Trigger */}
           <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
-            <LanguageSwitcher variant="navbar" />
-
-            <a
-              href={getAffiliationWhatsAppUrl()}
-              onClick={(e) => {
-                if (typeof window !== 'undefined') {
-                  e.currentTarget.href = getAffiliationWhatsAppUrl(window.location.href);
-                }
-              }}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-2 px-3.5 py-2 text-xs font-bold text-white bg-[#00A550] hover:bg-[#008f44] rounded-xl shadow-xs transition-all whitespace-nowrap active:scale-95"
-            >
-              <span>+507 6778-8375</span>
-            </a>
-
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 text-black hover:text-[#00795F] rounded-lg hover:bg-stone-100 transition-colors"
@@ -144,14 +125,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
       {/* Mobile navigation dropdown */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-stone-200 bg-white px-4 pt-4 pb-6 shadow-xl animate-fade-in overflow-y-auto max-h-[85vh]">
-          {/* Mobile Language Switcher */}
-          <div className="mb-4">
-            <span className="text-[10px] font-black uppercase text-stone-400 tracking-wider block mb-1.5 px-1">
-              {t('nav.lang', 'Idioma')} / Language
-            </span>
-            <LanguageSwitcher variant="mobile" />
-          </div>
-
           <div className="flex flex-col gap-1">
             {mainLinks.map((link) => {
               const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
@@ -171,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             
             {/* Mobile Contact Group */}
             <div className="mt-2 pt-2 border-t border-stone-100">
-              <span className="px-3 text-[11px] font-black text-stone-400 uppercase tracking-widest block mb-2">Contacto</span>
+              <span className="px-3 text-xs font-black text-stone-500 uppercase tracking-widest block mb-2">Contacto</span>
               {contactLinks.map((link) => {
                 const isActive = currentPath === link.href;
                 return (
@@ -188,26 +161,9 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 );
               })}
             </div>
-
-            <div className="mt-3 pt-3 border-t border-stone-100 flex flex-col gap-2">
-              <a
-                href={getAffiliationWhatsAppUrl()}
-                onClick={(e) => {
-                  if (typeof window !== 'undefined') {
-                    e.currentTarget.href = getAffiliationWhatsAppUrl(window.location.href);
-                  }
-                }}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-bold text-white bg-[#00A550] hover:bg-[#008f44] rounded-xl transition-colors"
-              >
-                <span>WhatsApp Distribuidor (+507 6778-8375)</span>
-              </a>
-            </div>
           </div>
         </div>
       )}
     </header>
   );
 };
-
