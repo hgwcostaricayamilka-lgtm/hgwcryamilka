@@ -43,12 +43,13 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
       // Search query
       if (searchQuery.trim() !== '') {
         const query = searchQuery.toLowerCase().trim();
+        const matchesCode = item.code?.toLowerCase().includes(query);
         const matchesName = item.name.toLowerCase().includes(query);
         const matchesDesc = item.shortDescription.toLowerCase().includes(query);
         const matchesIngredients = item.ingredients?.some(i => i.toLowerCase().includes(query));
         const matchesBenefits = item.benefits.some(b => b.toLowerCase().includes(query));
 
-        if (!matchesName && !matchesDesc && !matchesIngredients && !matchesBenefits) {
+        if (!matchesCode && !matchesName && !matchesDesc && !matchesIngredients && !matchesBenefits) {
           return false;
         }
       }
@@ -256,9 +257,16 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
                   {/* Body Content */}
                   <div className="p-3 sm:p-5 flex-1 flex flex-col justify-between">
                     <div>
-                      {/* Category label */}
-                      <div className="text-[10px] sm:text-xs font-bold text-[#00795F] uppercase tracking-wider mb-1 line-clamp-1">
-                        {product.categoryLabel}
+                      {/* Category label & Official Catalog Code */}
+                      <div className="flex items-center justify-between gap-1 mb-1">
+                        <span className="text-[10px] sm:text-xs font-bold text-[#00795F] uppercase tracking-wider line-clamp-1">
+                          {product.categoryLabel}
+                        </span>
+                        {product.code && (
+                          <span className="text-[9px] sm:text-[10px] font-extrabold text-stone-600 bg-stone-100 px-1.5 py-0.5 rounded shrink-0">
+                            Cód: {product.code}
+                          </span>
+                        )}
                       </div>
 
                       {/* Product Title linking to /producto/:slug */}

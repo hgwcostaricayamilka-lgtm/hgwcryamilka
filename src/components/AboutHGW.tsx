@@ -5,7 +5,7 @@ import { getAffiliationWhatsAppUrl } from '../utils/whatsapp';
 
 export const DIRECT_SALES_ASSOCIATIONS = [
   {
-    name: "Asociación Costarricense de Venta Directa (APVD)",
+    name: "Asociación Costarricense de Venta Directa",
     country: "Costa Rica",
     description: "Organismo que agrupa y regula a las empresas y distribuidores éticos de venta directa en la República de Costa Rica.",
     imageUrl: "https://media.academiahgw.online/wp-content/uploads/2026/11/Asociacion-Panamena-de-Venta-directa.webp"
