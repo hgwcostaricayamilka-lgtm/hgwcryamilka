@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/((?!producto/|assets/|.*\\..*).+)",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
