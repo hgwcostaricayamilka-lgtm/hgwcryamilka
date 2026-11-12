@@ -10,11 +10,11 @@ export const ContactSection: React.FC = () => {
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
-    const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwpanama.com';
+    const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwCosta Rica.com';
     let text = '';
     
     if (topic === 'Afiliación y Membresías') {
-      text = `¡Hola! Estaba visitando tu tienda online (${currentUrl}) y quería preguntar sobre cómo afiliarse a HGW Panamá. Mi nombre es: ${name.trim() || ''}`;
+      text = `¡Hola! Estaba visitando tu tienda online (${currentUrl}) y quería preguntar sobre cómo afiliarse a HGW Costa Rica. Mi nombre es: ${name.trim() || ''}`;
       if (message.trim()) text += `\nDetalles: ${message.trim()}`;
     } else {
       text = `¡Hola! Estaba visitando tu tienda online (${currentUrl})\n`;
@@ -38,10 +38,10 @@ export const ContactSection: React.FC = () => {
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-bold text-[#00795F] uppercase tracking-wider mb-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#00A550]" />
-                <span>Atención Personalizada en Panamá</span>
+                <span>Atención Personalizada en Costa Rica</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight">
-                Contáctanos en Panamá
+                Contáctanos en Costa Rica
               </h2>
               <p className="text-[17px] text-stone-800 mt-2 leading-relaxed font-normal">
                 Estamos a tu disposición para asesorarte sobre cualquier producto, confirmar existencias, coordinar entregas o guiarte en tu proceso de afiliación y prerregistro.
@@ -70,12 +70,12 @@ export const ContactSection: React.FC = () => {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-xs font-bold text-stone-500 uppercase tracking-wider">Oficinas Principales en Panamá</h3>
+                  <h3 className="text-xs font-bold text-stone-500 uppercase tracking-wider">Oficinas Principales en Costa Rica</h3>
                   <p className="text-sm sm:text-base font-bold text-black mt-0.5 leading-snug">
                     Avenida Porras, Plaza Royal Blue, Local No. 6
                   </p>
                   <p className="text-xs text-stone-600 mt-1">
-                    Provincia de PANAMÁ, Corregimiento de San Francisco.
+                    Provincia de Costa Rica, Corregimiento de San Francisco.
                   </p>
                   <p className="text-xs font-bold text-[#00795F] mt-1.5 flex items-center gap-2">
                     <span>Teléfono Oficina Principal: <strong>+507 392-8415</strong></span>
@@ -110,7 +110,7 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <h3 className="text-xs font-bold text-stone-500 uppercase tracking-wider">Correo Electrónico</h3>
                   <p className="text-base font-bold text-black select-all">
-                    hgwpanama507g@gmail.com
+                    hgwCosta Rica507g@gmail.com
                   </p>
                   <p className="text-xs sm:text-sm text-stone-600 mt-0.5">Buzón directo para pre-registros y atención oficial</p>
                 </div>
@@ -156,7 +156,7 @@ export const ContactSection: React.FC = () => {
 
             <div className="p-4 bg-stone-100 border border-stone-200 rounded-2xl text-xs sm:text-sm text-stone-800 flex items-center gap-3">
               <CheckCircle2 className="w-5 h-5 text-[#00A550] shrink-0" />
-              <span>Garantía de productos 100% auténticos suministrados por distribuidores autorizados de HGW en Panamá.</span>
+              <span>Garantía de productos 100% auténticos suministrados por distribuidores autorizados de HGW en Costa Rica.</span>
             </div>
 
           </div>
@@ -211,7 +211,7 @@ export const ContactSection: React.FC = () => {
                   required
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Escribe aquí tu duda, producto que te interesa o tu ubicación en Panamá..."
+                  placeholder="Escribe aquí tu duda, producto que te interesa o tu ubicación en Costa Rica..."
                   className="w-full px-4 py-3 text-sm bg-white border border-stone-300 rounded-xl text-black placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#00795F]/30 focus:border-[#00795F] transition-all resize-none font-medium"
                 />
               </div>

@@ -106,7 +106,7 @@ export const PreRegistrationPage: React.FC = () => {
             </div>
           </div>
           <a
-            href="https://www.healthgreenworld.com/"
+            href="https://www.healthgreenworld.com/?userName=Yamilka507"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#00795F] font-black text-sm rounded-xl shadow-sm hover:bg-stone-50 transition-all active:scale-95 whitespace-nowrap"
@@ -115,6 +115,18 @@ export const PreRegistrationPage: React.FC = () => {
             <ExternalLink className="w-4 h-4" />
           </a>
         </div>
+        
+        {/* Tutorial Video */}
+        <div className="mb-8">
+           <h2 className="text-2xl font-black text-black mb-4">Tutorial: Cómo registrarte y activar tu cuenta HGW</h2>
+           <iframe
+              className="w-full aspect-video rounded-3xl"
+              src="https://www.youtube.com/embed/Poy4FvvfcfA"
+              title="Tutorial: Cómo registrarte y activar tu cuenta HGW"
+              allowFullScreen
+            ></iframe>
+        </div>
+
 
         {/* Office Info & Servientrega Banner */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">

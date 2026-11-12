@@ -6,8 +6,8 @@ import { getAffiliationWhatsAppUrl } from '../utils/whatsapp';
 export const DIRECT_SALES_ASSOCIATIONS = [
   {
     name: "Asociación Panameña de Venta Directa (APVD)",
-    country: "Panamá",
-    description: "Organismo que agrupa y regula a las empresas y distribuidores éticos de venta directa en la República de Panamá.",
+    country: "Costa Rica",
+    description: "Organismo que agrupa y regula a las empresas y distribuidores éticos de venta directa en la República de Costa Rica.",
     imageUrl: "https://media.academiahgw.online/wp-content/uploads/2026/11/Asociacion-Panamena-de-Venta-directa.webp"
   },
   {
@@ -111,7 +111,7 @@ export const AboutHGW: React.FC = () => {
               </p>
               <div className="mt-3 flex items-center gap-1.5 text-xs text-[#00795F] font-bold">
                 <Award className="w-4 h-4 text-[#00A550]" />
-                <span>Expansión América Latina & Panamá</span>
+                <span>Expansión América Latina & Costa Rica</span>
               </div>
             </div>
           </div>
@@ -126,7 +126,7 @@ export const AboutHGW: React.FC = () => {
               <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white shadow-xl bg-white mb-4">
                 <img
                   src="https://media.academiahgw.online/wp-content/uploads/2026/11/Foto-de-Perfil-Yamilka-Batista-Emprendedora-HGW-2-1024x1024.jpeg"
-                  alt="Yamilka Batista - Distribuidora Independiente Autorizada HGW Panamá"
+                  alt="Yamilka Batista - Distribuidora Independiente Autorizada HGW Costa Rica"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -142,13 +142,13 @@ export const AboutHGW: React.FC = () => {
             <div className="lg:col-span-8 space-y-4">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#00795F]/10 rounded-full text-xs font-bold text-[#00795F]">
                 <HeartHandshake className="w-4 h-4" />
-                <span>Tu Enlace Directo en Panamá</span>
+                <span>Tu Enlace Directo en Costa Rica</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-black text-black">
                 Atención cercana, entrega confiable y asesoría personalizada
               </h3>
               <p className="text-[17px] sm:text-[18px] text-stone-800 leading-relaxed font-normal">
-                Como distribuidores independientes de HGW en Panamá, nuestro compromiso es brindarte orientación honesta sobre los beneficios de cada formulación, disponibilidad inmediata para entrega en provincias y acompañarte si deseas afiliarte para consumo familiar o generar ingresos propios.
+                Como distribuidores independientes de HGW en Costa Rica, nuestro compromiso es brindarte orientación honesta sobre los beneficios de cada formulación, disponibilidad inmediata para entrega en provincias y acompañarte si deseas afiliarte para consumo familiar o generar ingresos propios.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -168,7 +168,7 @@ export const AboutHGW: React.FC = () => {
                   <Mail className="w-5 h-5 text-[#00A550] shrink-0" />
                   <div>
                     <span className="text-xs text-stone-500 block">Correo para Pre-registro</span>
-                    <strong className="text-black font-extrabold text-sm sm:text-base select-all">hgwpanama507g@gmail.com</strong>
+                    <strong className="text-black font-extrabold text-sm sm:text-base select-all">hgwCosta Rica507g@gmail.com</strong>
                   </div>
                 </div>
               </div>
@@ -179,7 +179,7 @@ export const AboutHGW: React.FC = () => {
                   <strong className="text-amber-900 font-extrabold">Aclaración de Atención al Cliente:</strong> El número de WhatsApp publicado corresponde exclusivamente a la atención de un <strong>distribuidor independiente</strong> para consultas comerciales, pedidos y nuevos afiliados. <em>No es una línea oficial de la empresa HGW.</em>
                 </p>
                 <p className="text-stone-700 leading-relaxed font-medium">
-                  📌 <strong>¿Ya eres socio registrado de HGW?</strong> Si ya estás registrado como socio, por favor comunícate directamente con tu <strong>patrocinador</strong> o con el teléfono de las oficinas principales en Panamá: <strong className="text-black">+507 392-8415</strong> para recibir asistencia en tus pedidos internos o consultas de código.
+                  📌 <strong>¿Ya eres socio registrado de HGW?</strong> Si ya estás registrado como socio, por favor comunícate directamente con tu <strong>patrocinador</strong> o con el teléfono de las oficinas principales en Costa Rica: <strong className="text-black">+507 392-8415</strong> para recibir asistencia en tus pedidos internos o consultas de código.
                 </p>
               </div>
             </div>

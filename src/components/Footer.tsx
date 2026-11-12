@@ -13,8 +13,8 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-5 space-y-3">
             <Link to="/inicio" className="flex items-center gap-3">
               <img
-                src="https://media.academiahgw.online/wp-content/uploads/2026/11/LOGO-HGW-PANAMA-DISTRIBUIDOR-INDEPENDIENTE.png"
-                alt="HGW Panamá - Distribuidor Independiente"
+                src="https://media.academiahgw.online/wp-content/uploads/2026/11/LOGO-HGW-Costa Rica-DISTRIBUIDOR-INDEPENDIENTE.png"
+                alt="HGW Costa Rica - Distribuidor Independiente"
                 className="h-12 w-auto object-contain brightness-0 invert"
                 referrerPolicy="no-referrer"
                 onError={(e) => {
@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
               />
             </Link>
             <p className="text-stone-300 text-xs sm:text-sm leading-relaxed max-w-sm pt-1">
-              Distribuidores Independientes autorizados de Health Green World en Panamá. Bienestar holístico mediante productos formulados con extractos ancestrales de arándano, turmalina, ganoderma y fitonutrientes.
+              Distribuidores Independientes autorizados de Health Green World en Costa Rica. Bienestar holístico mediante productos formulados con extractos ancestrales de arándano, turmalina, ganoderma y fitonutrientes.
             </p>
             <div className="pt-1">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-stone-800 text-emerald-400 text-xs font-bold border border-stone-700">
@@ -85,13 +85,13 @@ export const Footer: React.FC = () => {
           {/* Direct Contact info */}
           <div className="lg:col-span-4 space-y-3">
             <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-              Oficinas Principales y Envíos Panamá
+              Oficinas Principales y Envíos Costa Rica
             </h3>
             <div className="space-y-2 text-stone-300 text-xs sm:text-sm">
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#00A550] shrink-0 mt-0.5" />
                 <span>
-                  Avenida Porras, Plaza Royal Blue, Local No. 6, San Francisco, Ciudad de Panamá.
+                  Avenida Porras, Plaza Royal Blue, Local No. 6, San Francisco, Ciudad de Costa Rica.
                 </span>
               </p>
               <p className="flex items-center gap-2">
@@ -104,14 +104,14 @@ export const Footer: React.FC = () => {
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#00A550] shrink-0" />
-                <span>Email: <strong className="text-white font-bold select-all">hgwpanama507g@gmail.com</strong></span>
+                <span>Email: <strong className="text-white font-bold select-all">hgwCosta Rica507g@gmail.com</strong></span>
               </p>
               <div className="p-2.5 bg-stone-800 rounded-xl border border-stone-700/80 text-[11px] text-stone-300 leading-snug">
                 <strong className="text-emerald-400 font-bold block mb-0.5">Soporte a Socios Registrados:</strong>
                 Si ya es socio activo de HGW, debe comunicarse directamente con su <em>patrocinador</em> o con el teléfono corporativo <strong>+507 392-8415</strong>. El WhatsApp de este sitio corresponde a distribuidores independientes.
               </div>
               <p className="pt-1 text-xs text-stone-400 leading-relaxed">
-                Horario: Lun - Vie 9:00 am a 6:00 pm | Sáb 9:00 am a 1:00 pm. Envíos por Servientrega a todo Panamá.
+                Horario: Lun - Vie 9:00 am a 6:00 pm | Sáb 9:00 am a 1:00 pm. Envíos por Servientrega a todo Costa Rica.
               </p>
               <div className="pt-2">
                 <a
@@ -132,7 +132,7 @@ export const Footer: React.FC = () => {
         {/* Mandatory Independent Distributor Notice & Medical Disclaimer */}
         <div className="pt-8 border-t border-stone-800 text-xs text-stone-400 leading-relaxed space-y-3">
           <p className="bg-stone-800/80 p-4 rounded-xl border border-stone-700/60 text-stone-300">
-            <strong className="text-white">Aviso Legal y de Independencia:</strong> Este sitio web es de carácter informativo y comercial, operado de manera autónoma por Distribuidores Independientes autorizados de Health Green World (HGW) en Panamá. No constituye la página web corporativa oficial ni la sede principal de Health Green World Inc. Las marcas registradas, logotipos y nombres comerciales mostrados pertenecen a sus respectivos propietarios y se utilizan únicamente con fines ilustrativos e informativos.
+            <strong className="text-white">Aviso Legal y de Independencia:</strong> Este sitio web es de carácter informativo y comercial, operado de manera autónoma por Distribuidores Independientes autorizados de Health Green World (HGW) en Costa Rica. No constituye la página web corporativa oficial ni la sede principal de Health Green World Inc. Las marcas registradas, logotipos y nombres comerciales mostrados pertenecen a sus respectivos propietarios y se utilizan únicamente con fines ilustrativos e informativos.
           </p>
 
           <p>
@@ -140,8 +140,8 @@ export const Footer: React.FC = () => {
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-stone-400 text-xs">
-            <p>© {new Date().getFullYear()} HGW Panamá · Distribuidores Independientes Autorizados.</p>
-            <p>Panamá, República de Panamá</p>
+            <p>© {new Date().getFullYear()} HGW Costa Rica · Distribuidores Independientes Autorizados.</p>
+            <p>Costa Rica, República de Costa Rica</p>
           </div>
         </div>
 

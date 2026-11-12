@@ -18,15 +18,15 @@ export const Hero: React.FC = () => {
               <span className="w-2.5 h-2.5 rounded-full bg-[#00A550]" />
               <span>Salud · Bienestar · Prosperidad</span>
               <span aria-hidden="true" className="text-stone-300">/</span>
-              <span>Panamá</span>
+              <span>Costa Rica</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-black leading-[1.15] text-balance mb-5">
-              Bienestar Natural y Productos Funcionales con <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00795F] to-[#00A550]">HGW Panamá</span>
+              Bienestar Natural y Productos Funcionales con <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00795F] to-[#00A550]">HGW Costa Rica</span>
             </h1>
 
             <p className="text-[18px] text-stone-800 leading-relaxed max-w-2xl mb-8 font-normal">
-              Descubre la sinergia entre la sabiduría herbolaria milenaria y la tecnología moderna. Productos originales de arándano, turmalina, ganoderma lucidum y probióticos respaldados por certificaciones de clase mundial y asesoría personalizada de distribuidores independientes en Panamá.
+              Descubre la sinergia entre la sabiduría herbolaria milenaria y la tecnología moderna. Productos originales de arándano, turmalina, ganoderma lucidum y probióticos respaldados por certificaciones de clase mundial y asesoría personalizada de distribuidores independientes en Costa Rica.
             </p>
 
             {/* CTAs */}
@@ -83,7 +83,7 @@ export const Hero: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-5">
                     <div className="text-white">
-                      <p className="text-xs font-bold text-emerald-300 uppercase tracking-wider">Línea Oficial Panamá</p>
+                      <p className="text-xs font-bold text-emerald-300 uppercase tracking-wider">Línea Oficial Costa Rica</p>
                       <p className="text-[18px] sm:text-[20px] font-black">Arándano · Ganoderma · Turmalina</p>
                     </div>
                   </div>
@@ -97,7 +97,7 @@ export const Hero: React.FC = () => {
                   </div>
                   <div className="p-3 bg-stone-50 rounded-xl border border-stone-100">
                     <p className="text-xs text-stone-600 font-medium">Distribución</p>
-                    <p className="text-sm sm:text-base font-black text-[#00795F]">Envíos en Panamá</p>
+                    <p className="text-sm sm:text-base font-black text-[#00795F]">Envíos en Costa Rica</p>
                   </div>
                 </div>
               </div>

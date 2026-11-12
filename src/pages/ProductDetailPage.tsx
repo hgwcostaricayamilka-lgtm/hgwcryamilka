@@ -91,8 +91,8 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
             </div>
 
             {/* Action Area */}
-            <div className="pt-8 border-t border-stone-100 mt-auto">
-              <div className="bg-amber-50 border-l-4 border-amber-500 p-5 mb-8 rounded-r-2xl shadow-sm">
+            <div className="pt-8 border-t border-stone-100 mt-auto space-y-4">
+              <div className="bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-2xl shadow-sm">
                 <div className="flex items-center text-amber-900 font-black mb-1 text-[17px]">
                   <AlertTriangle className="mr-2 w-5 h-5 shrink-0" /> Aviso de Pedido
                 </div>
@@ -109,9 +109,37 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ slug }) =>
               >
                 <span>Consultar por WhatsApp</span>
               </a>
+              
+              <Link 
+                to="/preregistro"
+                className="w-full py-5 px-8 bg-stone-100 hover:bg-stone-200 text-stone-900 font-black text-xl rounded-2xl shadow-sm flex items-center justify-center gap-3 transition-all active:scale-95 uppercase tracking-wider"
+              >
+                <span>Ir a Pre-registro</span>
+              </Link>
             </div>
           </div>
         </div>
+        
+        {/* Technical PDF Link */}
+        {product.technicalDocId && (
+           <div className="mt-10 p-6 sm:p-8 bg-emerald-50 rounded-3xl border border-emerald-200 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+             <div className="flex items-center gap-4">
+               <div className="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-[#00795F]">
+                  <Sparkles className="w-6 h-6" />
+               </div>
+               <div>
+                  <h3 className="font-black text-lg text-black">Documentación Técnica</h3>
+                  <p className="text-sm text-stone-600">Consulta la ficha técnica oficial de este producto.</p>
+               </div>
+             </div>
+             <Link 
+               to={`/documentos/${product.technicalDocId}`}
+               className="px-8 py-4 bg-white hover:bg-emerald-50 text-[#00795F] font-black text-sm rounded-2xl border border-emerald-200 shadow-sm transition-all active:scale-95 whitespace-nowrap"
+             >
+               VER FICHA TÉCNICA
+             </Link>
+           </div>
+        )}
 
         {/* WooCommerce Style Tabs Section */}
         <div className="border-t border-stone-200 pt-12">

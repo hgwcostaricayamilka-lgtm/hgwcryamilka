@@ -78,13 +78,13 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
               <span className="w-2.5 h-2.5 rounded-full bg-[#00A550]" />
               <span>Línea Original de Bienestar</span>
               <span aria-hidden="true" className="text-stone-300">·</span>
-              <span>HGW Panamá</span>
+              <span>HGW Costa Rica</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight">
               {isHomeView ? 'Productos Destacados' : 'Catálogo de Productos Oficiales'}
             </h2>
             <p className="text-base text-stone-700 mt-2 max-w-2xl font-normal leading-relaxed">
-              Explora nuestras fórmulas botánicas, cafés funcionales de arándano y ganoderma, tecnología de nanoturmalina y suplementos con precios oficiales en Panamá. Cada producto cuenta con su ficha técnica completa.
+              Explora nuestras fórmulas botánicas, cafés funcionales de arándano y ganoderma, tecnología de nanoturmalina y suplementos con precios oficiales en Costa Rica. Cada producto cuenta con su ficha técnica completa.
             </p>
           </div>
 
@@ -209,7 +209,7 @@ export const Catalog: React.FC<CatalogProps> = ({ isHomeView = false }) => {
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {displayedProducts.map((product) => {
               const productUrl = `/producto/${product.slug}`;
-              const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwpanama.com/productos';
+              const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwCosta Rica.com/productos';
               const whatsappOrderText = encodeURIComponent(
                 `¡Hola! Estaba visitando tu tienda online (${currentUrl}) y quería consultar o adquirir el producto "${product.name}" (${product.priceFormatted}). Mi nombre es:`
               );

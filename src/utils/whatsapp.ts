@@ -3,7 +3,7 @@ export const CORPORATE_OFFICE_PHONE = "+507 392-8415";
 
 /**
  * Generates the WhatsApp URL with the exact message requested by the user:
- * «¡Hola! Estaba visitando tu tienda online (URL de la página) y quería preguntar sobre cómo afiliarse a HGW Panamá. Mi nombre es:»
+ * «¡Hola! Estaba visitando tu tienda online (URL de la página) y quería preguntar sobre cómo afiliarse a HGW Costa Rica. Mi nombre es:»
  */
 export const getAffiliationWhatsAppUrl = (customUrl?: string): string => {
   let pageUrl = customUrl;
@@ -11,9 +11,9 @@ export const getAffiliationWhatsAppUrl = (customUrl?: string): string => {
     pageUrl = window.location.href;
   }
   if (!pageUrl) {
-    pageUrl = 'https://hgwpanama.com';
+    pageUrl = 'https://hgwcostarica.com';
   }
 
-  const message = `¡Hola! Estaba visitando tu tienda online (${pageUrl}) y quería preguntar sobre cómo afiliarse a HGW Panamá. Mi nombre es:`;
+  const message = `¡Hola! Estaba visitando tu tienda online (${pageUrl}) y quería preguntar sobre cómo afiliarse a HGW Costa Rica. Mi nombre es:`;
   return `https://wa.me/${DISTRIBUTOR_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 };

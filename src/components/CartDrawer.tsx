@@ -25,7 +25,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   onClearCart
 }) => {
   const [customerName, setCustomerName] = useState('');
-  const [location, setLocation] = useState('Panamá Centro');
+  const [location, setLocation] = useState('Costa Rica Centro');
   const [deliveryNotes, setDeliveryNotes] = useState('');
 
   if (!isOpen) return null;
@@ -35,7 +35,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   const handleSendWhatsApp = () => {
     if (items.length === 0) return;
 
-    const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwpanama.com';
+    const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://hgwCosta Rica.com';
     let message = `¡Hola! Estaba visitando tu tienda online (${currentUrl}) y deseo coordinar la compra y entrega del siguiente pedido:\n\n`;
     
     items.forEach((item) => {
@@ -53,7 +53,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
       message += `📝 *Dirección / Detalle:* ${deliveryNotes.trim()}\n`;
     }
 
-    message += `\n¿Tienen disponibilidad para coordinar entrega o envío en Panamá? Muchas gracias.`;
+    message += `\n¿Tienen disponibilidad para coordinar entrega o envío en Costa Rica? Muchas gracias.`;
 
     const encoded = encodeURIComponent(message);
     window.open(`https://wa.me/50767788375?text=${encoded}`, '_blank');
@@ -190,7 +190,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 <div className="mt-5 pt-4 border-t border-stone-200 space-y-3">
                   <h4 className="text-xs font-bold text-stone-800 uppercase tracking-wider flex items-center gap-1.5">
                     <MapPin className="w-3.5 h-3.5 text-[#00795F]" />
-                    <span>Datos para Entrega en Panamá</span>
+                    <span>Datos para Entrega en Costa Rica</span>
                   </h4>
 
                   <div className="space-y-2">
@@ -211,9 +211,9 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                         onChange={(e) => setLocation(e.target.value)}
                         className="w-full px-3 py-2 text-xs bg-white border border-stone-200 rounded-xl text-stone-900 focus:outline-none focus:border-[#00795F]"
                       >
-                        <option value="Panamá Centro">Panamá Centro / San Francisco / Bella Vista</option>
+                        <option value="Costa Rica Centro">Costa Rica Centro / San Francisco / Bella Vista</option>
                         <option value="San Miguelito">San Miguelito</option>
-                        <option value="Panamá Oeste">Panamá Oeste (La Chorrera / Arraiján)</option>
+                        <option value="Costa Rica Oeste">Costa Rica Oeste (La Chorrera / Arraiján)</option>
                         <option value="Colón">Colón</option>
                         <option value="Chiriquí (David)">Chiriquí (David / Boquete)</option>
                         <option value="Veraguas (Santiago)">Veraguas (Santiago)</option>

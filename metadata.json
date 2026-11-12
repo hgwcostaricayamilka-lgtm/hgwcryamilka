@@ -1,6 +1,6 @@
 {
-  "name": "HGW Panamá - Distribuidores Independientes",
-  "description": "Catálogo de productos naturales, membresías y contacto con distribuidores independientes autorizados de HGW en Panamá.",
+  "name": "HGW Costa Rica - Distribuidores Independientes",
+  "description": "Catálogo de productos naturales, membresías y contacto con distribuidores independientes autorizados de HGW en Costa Rica.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

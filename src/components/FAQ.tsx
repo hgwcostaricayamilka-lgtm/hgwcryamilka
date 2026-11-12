@@ -11,16 +11,16 @@ export const FAQ: React.FC = () => {
 
   const faqs: FAQItem[] = [
     {
-      question: "¿Cómo puedo realizar un pedido en Panamá?",
+      question: "¿Cómo puedo realizar un pedido en Costa Rica?",
       answer: "Puedes seleccionar los productos que deseas en nuestro catálogo y agregarlos a 'Mi Pedido', o hacer clic directamente en 'Pedir por WhatsApp' en cualquier producto o ficha técnica. Se generará un mensaje automático con tu pedido para que coordinemos la forma de entrega y pago al +507 6778-8375."
     },
     {
       question: "¿Cuáles son los métodos de pago disponibles?",
-      answer: "Aceptamos pagos mediante Yappy (Banco General), transferencias bancarias ACH y pago en efectivo contraentrega en áreas seleccionadas de Ciudad de Panamá y Panamá Oeste."
+      answer: "Aceptamos pagos mediante Yappy (Banco General), transferencias bancarias ACH y pago en efectivo contraentrega en áreas seleccionadas de Ciudad de Costa Rica y Costa Rica Oeste."
     },
     {
       question: "¿Realizan entregas al interior del país?",
-      answer: "Sí, coordinamos envíos a todas las provincias de Panamá (Chiriquí, Colón, Veraguas, Herrera, Los Santos, Coclé, Bocas del Toro, Darién) a través de servicios de encomienda confiables como Uno Express, Fletes Chavale o Ferguson."
+      answer: "Sí, coordinamos envíos a todas las provincias de Costa Rica (Chiriquí, Colón, Veraguas, Herrera, Los Santos, Coclé, Bocas del Toro, Darién) a través de servicios de encomienda confiables como Uno Express, Fletes Chavale o Ferguson."
     },
     {
       question: "¿Estos productos son medicamentos?",
@@ -28,7 +28,7 @@ export const FAQ: React.FC = () => {
     },
     {
       question: "¿Cómo puedo afiliarme como socio distribuidor para obtener descuentos de hasta un 52%?",
-      answer: "Puedes afiliarte a través de nuestro patrocinio autorizado en Panamá (código Yamilka507). Elige el paquete de activación que mejor se ajuste a tus metas (Pre-Junior de 50 BV, Junior de 100 BV, Senior de 300 BV o Master de 600 BV). Con el plan Master compras a precio preferencial con hasta un 52% de beneficio en recompras, permitiéndote márgenes del 60% en ventas directas. Puedes completar el Pre-registro en la sección 'Oportunidad de Negocio' o escribirnos al WhatsApp."
+      answer: "Puedes afiliarte a través de nuestro patrocinio autorizado en Costa Rica (código Yamilka507). Elige el paquete de activación que mejor se ajuste a tus metas (Pre-Junior de 50 BV, Junior de 100 BV, Senior de 300 BV o Master de 600 BV). Con el plan Master compras a precio preferencial con hasta un 52% de beneficio en recompras, permitiéndote márgenes del 60% en ventas directas. Puedes completar el Pre-registro en la sección 'Oportunidad de Negocio' o escribirnos al WhatsApp."
     }
   ];
 
@@ -45,7 +45,7 @@ export const FAQ: React.FC = () => {
             Preguntas Frecuentes
           </h2>
           <p className="text-sm text-stone-700 mt-2 font-normal">
-            Todo lo que necesitas saber sobre entregas, pagos y membresías en Panamá.
+            Todo lo que necesitas saber sobre entregas, pagos y membresías en Costa Rica.
           </p>
         </div>
 
